@@ -27,16 +27,5 @@ Short’s R Reference Card The R Graph Gallery R Color Chart Data tidying with t
 Weitere Infos befinden sich unter diesem Link und das neue Homepage https://posit.co/.</description>
     </item>
     
-    <item>
-      <title>Dateien herunterladen</title>
-      <link>https://kamapu.github.io/GrundkursR/2022/10/24/dateien-herunterladen/</link>
-      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kamapu.github.io/GrundkursR/2022/10/24/dateien-herunterladen/</guid>
-      <description> Die benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.
-Um diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:
-download.file(url = &amp;quot;https://kamapu.github.io/RKurs-VHS-2022/documents/KursDateien.zip&amp;quot;, destfile = &amp;quot;KursDateien.zip&amp;quot;, method = &amp;quot;curl&amp;quot;) unzip(&amp;quot;KursDateien.zip&amp;quot;, overwrite = TRUE) unlink(&amp;quot;KursDateien.zip&amp;quot;) </description>
-    </item>
-    
   </channel>
 </rss>

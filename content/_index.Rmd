@@ -1,5 +1,5 @@
 ---
-title: Einführung in R und RStudio
+title: Statistiken und Graphiken mit R
 output: html_document
 ---
 
@@ -8,7 +8,7 @@ die Verwendung von RStudio und die Nutzung von Rmarkdown.
 
 Der Kurs ist von der Volkshochschule Bonn organisiert. Für weitere Infos,
 klicken Sie
-[hier](https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-E5725&rowIndex=2).
+[hier](https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html/kurs/484-C-F5725/t/statistik-und-graphiken-mit-r-einfuehrungskurs-2-x-woechentlich).
 
 # Termine 1 und 2
 
@@ -17,8 +17,11 @@ die Nutzung von **RStudio**.
 
 [Folien](documents/FolienRKurs-12.pdf)
 
+<!--
+
 [Skript Tag 1](documents/Tag1.R)
 [Skript Tag 2](documents/Tag2.R)
+
 
 # Termine 3 und 4
 
@@ -51,3 +54,5 @@ Erzeugung von Dokumenten mit den Paketen `knitr` und `rmarkdown`.
 
 [Skript Tag 8](documents/Tag8.R)
 [Dokument als Rmarkdown](documents/Statistik.Rmd)
+
+-->

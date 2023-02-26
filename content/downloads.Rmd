@@ -9,6 +9,8 @@ output: blogdown::html_page
 
 [Literaturhinweis](../documents/Referenzen.pdf)
 
+<!--
+
 # Folien
 
 [Termine 1 & 2](../documents/FolienRKurs-12.pdf)
@@ -22,3 +24,5 @@ output: blogdown::html_page
 [Termin 3](../documents/Tag3.R) [Termin 4](../documents/Tag4.R)
 
 [Datensatz](../2022/10/24/dateien-herunterladen/)
+
+-->
