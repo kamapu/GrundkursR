@@ -1,0 +1,53 @@
+---
+title: Einführung in R und RStudio
+output: html_document
+---
+
+Dieser Kurs bietet einen Einstieg in die Grundlagen des Programmierens mit R,
+die Verwendung von RStudio und die Nutzung von Rmarkdown.
+
+Der Kurs ist von der Volkshochschule Bonn organisiert. Für weitere Infos,
+klicken Sie
+[hier](https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-E5725&rowIndex=2).
+
+# Termine 1 und 2
+
+Einstieg in das Syntax und die Datentypen in **R**, inklusive eine Einführung in
+die Nutzung von **RStudio**.
+
+[Folien](documents/FolienRKurs-12.pdf)
+
+[Skript Tag 1](documents/Tag1.R)
+[Skript Tag 2](documents/Tag2.R)
+
+# Termine 3 und 4
+
+Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätzen
+(Klasse `data.frame`), sowie das Schreiben und Lesen von Dateien.
+
+[Folien](documents/FolienRKurs-34.pdf)
+
+[Skript Tag 3](documents/Tag3.R)
+[Skript Tag 4](documents/Tag4.R)
+
+# Termine 5 und 6
+
+Statistische Auswertungen von Datensätzen (Klasse `data.frame`) und
+Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für
+Datenverwaltung diskutiert.
+
+[Skript Tag 5](documents/Tag5.R)
+[Skript Tag 6](documents/Tag6.R)
+
+# Termine 7 und 8
+
+Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode.
+Erzeugung von Dokumenten mit den Paketen `knitr` und `rmarkdown`.
+
+[Folien](documents/FolienRKurs-78.pdf)
+
+[Skript Tag 7](documents/Tag7.R)
+[Quellcode für Tag 7](documents/MeineFunktionen.R)
+
+[Skript Tag 8](documents/Tag8.R)
+[Dokument als Rmarkdown](documents/Statistik.Rmd)

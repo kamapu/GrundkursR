@@ -1,0 +1,15 @@
+---
+title: Die Verwandlung von RStudio
+author: Miguel Alvarez
+date: 2022-11-02
+output: blogdown::html_page
+---
+
+Ich habe davon erst gestern erfahren obwohl die Pläne schon in Juli 2022
+angekündigt wurden: **RStudio** wechselt sein Name für **Posit**.
+Dadurch wird die Programmiersprache **Python** den gleichen Gewicht wie **R**
+in dem Integrierten Entwicklungsumgebung.
+
+Weitere Infos befinden sich unter diesem
+[Link](https://posit.co/blog/rstudio-is-becoming-posit/) und das neue Homepage
+<https://posit.co/>.

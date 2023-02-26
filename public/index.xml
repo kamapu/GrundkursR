@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Einführung in R und RStudio on R Kurs</title>
+    <link>https://kamapu.github.io/GrundkursR/</link>
+    <description>Recent content in Einführung in R und RStudio on R Kurs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Thu, 03 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kamapu.github.io/GrundkursR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schummelzettel</title>
+      <link>https://kamapu.github.io/GrundkursR/2022/11/03/schummelzettel/</link>
+      <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/2022/11/03/schummelzettel/</guid>
+      <description> Wenn man gerade die Arbeit mit R lernt oder in neuen Anwendungen eingeführt wird, verschaffen Schummelzettel eine gute Überblick der wichtigten Funktionen oder Argumenten. Hier ist eine Liste von solchen Zetteln, die man in Internet finden kann.
+Short’s R Reference Card The R Graph Gallery R Color Chart Data tidying with tidyr Cheat Sheet knitr Reference Card R Markdown Cheat Sheet Interaktives Markdown Tutorial Code Chunk Options for knitr and Rmarkdown The Carpentries Glosario </description>
+    </item>
+    
+    <item>
+      <title>Die Verwandlung von RStudio</title>
+      <link>https://kamapu.github.io/GrundkursR/2022/11/02/die-verwandlung-von-rstudio/</link>
+      <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/2022/11/02/die-verwandlung-von-rstudio/</guid>
+      <description>Ich habe davon erst gestern erfahren obwohl die Pläne schon in Juli 2022 angekündigt wurden: RStudio wechselt sein Name für Posit. Dadurch wird die Programmiersprache Python den gleichen Gewicht wie R in dem Integrierten Entwicklungsumgebung.
+Weitere Infos befinden sich unter diesem Link und das neue Homepage https://posit.co/.</description>
+    </item>
+    
+    <item>
+      <title>Dateien herunterladen</title>
+      <link>https://kamapu.github.io/GrundkursR/2022/10/24/dateien-herunterladen/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/2022/10/24/dateien-herunterladen/</guid>
+      <description> Die benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.
+Um diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:
+download.file(url = &amp;quot;https://kamapu.github.io/RKurs-VHS-2022/documents/KursDateien.zip&amp;quot;, destfile = &amp;quot;KursDateien.zip&amp;quot;, method = &amp;quot;curl&amp;quot;) unzip(&amp;quot;KursDateien.zip&amp;quot;, overwrite = TRUE) unlink(&amp;quot;KursDateien.zip&amp;quot;) </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kamapu.github.io/GrundkursR/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/about/</guid>
+      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+    <item>
+      <title>Kurs Materialien</title>
+      <link>https://kamapu.github.io/GrundkursR/downloads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/downloads/</guid>
+      <description>Extras Benötigstes Software
+Literaturhinweis
+Folien Termine 1 &amp;amp; 2
+Termine 3 &amp;amp; 4
+Skripte und Datensätze Termin 1 Termin 2
+Termin 3 Termin 4
+Datensatz</description>
+    </item>
+    
+  </channel>
+</rss>

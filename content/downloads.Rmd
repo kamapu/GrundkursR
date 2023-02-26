@@ -1,0 +1,24 @@
+---
+title: Kurs Materialien
+output: blogdown::html_page
+---
+
+# Extras
+
+[Benötigstes Software](../documents/installieren.pdf)
+
+[Literaturhinweis](../documents/Referenzen.pdf)
+
+# Folien
+
+[Termine 1 & 2](../documents/FolienRKurs-12.pdf)
+
+[Termine 3 & 4](../documents/FolienRKurs-34.pdf)
+
+# Skripte und Datensätze
+
+[Termin 1](../documents/Tag1.R) [Termin 2](../documents/Tag2.R)
+
+[Termin 3](../documents/Tag3.R) [Termin 4](../documents/Tag4.R)
+
+[Datensatz](../2022/10/24/dateien-herunterladen/)

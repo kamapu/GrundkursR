@@ -1,0 +1,27 @@
+---
+title: Schummelzettel
+author: Miguel Alvarez
+date: 2022-11-03
+output: blogdown::html_page
+---
+
+Wenn man gerade die Arbeit mit **R** lernt oder in neuen Anwendungen eingeführt
+wird, verschaffen Schummelzettel eine gute Überblick der wichtigten Funktionen
+oder Argumenten. Hier ist eine Liste von solchen Zetteln, die man in Internet
+finden kann.
+
+- [Short's R Reference
+  Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+- [The R Graph Gallery](https://r-graph-gallery.com/)
+- [R Color
+  Chart](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)
+- [Data tidying with `tidyr` Cheat
+  Sheet](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
+- [`knitr` Reference
+  Card](https://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf)
+- [R Markdown Cheat
+  Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [Interaktives Markdown Tutorial](https://www.markdowntutorial.com/)
+- [Code Chunk Options for knitr and Rmarkdown](https://yihui.org/knitr/options/)
+- [The Carpentries Glosario](https://glosario.carpentries.org/)
+  
