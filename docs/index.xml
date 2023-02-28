@@ -6,7 +6,18 @@
     <description>Recent content in Statistiken und Graphiken mit R on R Kurs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 03 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kamapu.github.io/GrundkursR/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kamapu.github.io/GrundkursR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dateien herunterladen</title>
+      <link>https://kamapu.github.io/GrundkursR/2023/02/28/dateien-herunterladen/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/2023/02/28/dateien-herunterladen/</guid>
+      <description> Die benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.
+Um diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:
+download.file(url = &amp;quot;https://kamapu.github.io/GrundkursR/documents/KursDateien.zip&amp;quot;, destfile = &amp;quot;KursDateien.zip&amp;quot;, method = &amp;quot;curl&amp;quot;) unzip(&amp;quot;KursDateien.zip&amp;quot;, overwrite = TRUE) unlink(&amp;quot;KursDateien.zip&amp;quot;) </description>
+    </item>
+    
     <item>
       <title>Schummelzettel</title>
       <link>https://kamapu.github.io/GrundkursR/2022/11/03/schummelzettel/</link>
