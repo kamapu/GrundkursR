@@ -18,11 +18,9 @@ die Nutzung von **RStudio**.
 [Folien](documents/FolienRKurs-12.pdf)
 
 [Skript Tag 1](documents/Tag1.R)
-
-<!--
-    
 [Skript Tag 2](documents/Tag2.R)
 
+<!--
 
 # Termine 3 und 4
 
