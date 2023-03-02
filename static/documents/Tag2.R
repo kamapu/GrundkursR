@@ -1,102 +1,112 @@
-# Logische Operationen -----
-5 == 5
-5 != 5
-! 5 == 5
-10 < 20
-10 < 10
-10 <= 10
+# Nochmals logische Operatoren ----
 
-5 == 5 & 10 == 10
-5 == 5 & 10 == 15
-5 == 5 | 10 == 15
-5 == 7 | 10 == 15
+TRUE & TRUE
+TRUE & FALSE
+FALSE & FALSE
 
-# Vektoren und Zuweisung -----
+age <- 30
+age > 15
+age < 100
 
-c(5, 6, 10)
-c(1:100)
+age > 15 & age < 100
+age > 15 & age < 20
 
-A <- c(1:100)
-# B = c(5, 6)
-# c(202, 200) -> M
+occ <- "Student"
+occ == "Student" | occ == "Teacher"
 
-A + 100
+occ <- "Taxi Driver"
+occ == "Student" | occ == "Teacher"
 
-B <- 20
-M <- 30
-B + M
+TRUE | TRUE
+TRUE | FALSE
+FALSE | TRUE
 
-A/10
-
-a <- c(1, 5 , 101)
-
-DieHundert <- c(1:100)
-the_hundred <- c(1:100)
-
-A >= 50
-A
-
-A[50]
-A[c(2, 3, 75)]
-
+# Buchstaben
 letters
 LETTERS
 
-LETTERS[20]
-Auswahl <- A[A >= 50]
+"a" %in% letters
+"ä" %in% letters
+"a" %in% LETTERS
+letters %in% LETTERS
 
-ls()
-objects()
+M <- c("m", "X", "M")
+M %in% letters
+M %in% LETTERS
 
-rm(B)
-rm(the_hundred, DieHundert)
-rm(list = "a")
-rm(list = ls())
+!TRUE
+!FALSE
 
-# Symbol vs. Text
-A <- 50
-rm("A")
-rm(list = A)
+!20
+!0
+!1
 
-# Logische Operationen (2) ----
-"A" %in% LETTERS
-"A" %in% letters
-50 %in% 1:100
+!"Ich"
 
-all(c("a", "b", "C") %in% letters)
-any(c("a", "b", "C") %in% letters)
+M <- c("m", "X", "M")
+M %in% letters
+M %in% LETTERS
 
-# Datentypen ----
+(!M %in% letters) == (M %in% LETTERS)
 
-# character
-is.character("A")
-is.character('B')
+all((!M %in% letters) == (M %in% LETTERS))
+all(M %in% letters)
+any(M %in% letters)
 
-is.character("Mein Name ist 'Miguel'")
+# Verschiedene Klassen in einem Vektor
 
-A <- c(1:10)
-is.integer(A)
+Ich <- c(Namen = "Miguel",
+         Alter = 30,
+         Hausnr = 2)
+Ich
+Ichn <- as.integer(Ich)
+as.integer(15.99)
+round(15.99)
+round(15.09, digits = 1)
 
-B <- A/100
-is.integer(B)
+Ich["Namen"]
+names(Ich)
+Ich[c("Namen", "Hausnr")]
 
-B
+# NULL vs NA ----
+length(NA)
+length(c(NA, NA))
 
-# coersion
-as.integer(B)
+length(NULL)
 
-round(B*10)
-as.integer(B*10)
+Ich
+Ich["Alter"] <- NA
+Ich
 
-round(B, digits = 1)
+Ich <- NULL
+Ich
 
-is.character(letters)
+#as.numeric(exp(1i*pi))
 
-L <- A > 4
-is.logical(L)
+example("mean")
 
-# factor
-M <- as.factor(c("du", "er", "du", "sie", "er", "du"))
-summary(M)
+RSiteSearch("Logistic regression")
 
-N <- c("ich", M)
+demo()
+demo("graphics")
+
+# Logisches
+M <- sample(x = c(TRUE, FALSE), size = 100, replace = TRUE)
+
+M
+as.numeric(M)
+as.logical(c(0, 1, 5, 100))
+sum(M)
+
+# Laut Max
+length(M) - sum(M)
+
+# Laut Casey
+sum(!M)
+
+# Laut Miguel
+sum(M == FALSE)
+
+# Laut Alexander
+sum(M == 0)
+
