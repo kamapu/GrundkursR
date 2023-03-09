@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.110.0">
 
 
-<title>Kurs Materialien - R Kurs</title>
-<meta property="og:title" content="Kurs Materialien - R Kurs">
+<title>Dateien herunterladen - R Kurs</title>
+<meta property="og:title" content="Dateien herunterladen - R Kurs">
 
 
   <link href='https://kamapu.github.io/GrundkursR/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -19,6 +19,11 @@
 
 
 
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
 
 
 
@@ -55,45 +60,27 @@
 
   <article class="article">
     
+    <span class="article-duration">1 min read</span>
+    
 
-    <h1 class="article-title">Kurs Materialien</h1>
+    <h1 class="article-title">Dateien herunterladen</h1>
 
+    
+    <span class="article-date">2023-03-09</span>
     
 
     <div class="article-content">
       
 
 
-<div id="extras" class="section level1">
-<h1>Extras</h1>
-<p><a href="../documents/installieren.pdf">Benötigstes Software</a></p>
-<p><a href="../documents/Referenzen.pdf">Literaturhinweis</a></p>
-</div>
-<div id="folien" class="section level1">
-<h1>Folien</h1>
-<p><a href="../documents/FolienRKurs-12.pdf">Termine 1 &amp; 2</a></p>
-</div>
-<div id="skripte-und-datensätze" class="section level1">
-<h1>Skripte und Datensätze</h1>
-<p><a href="../documents/Tag1.R">Termin 1</a></p>
-</div>
-<div id="skripte-und-datensätze-1" class="section level1">
-<h1>Skripte und Datensätze</h1>
-<p><a href="../2022/03/09/dateien-herunterladen/">Datensatz</a></p>
-<!--
-
-# Folien
-
-[Termine 3 & 4](../documents/FolienRKurs-34.pdf)
-
-# Skripte und Datensätze
-
-[Termin 1](../documents/Tag1.R) [Termin 2](../documents/Tag2.R)
-
-[Termin 3](../documents/Tag3.R) [Termin 4](../documents/Tag4.R)
-
--->
-</div>
+<p>Die benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden
+<a href="http://kamapu.github.io/GrundkursR/documents/KursDateien.zip">Link</a>.</p>
+<p>Um diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe
+folgende Befehle in deiner Sitzung:</p>
+<pre class="r"><code>download.file(url = &quot;https://kamapu.github.io/GrundkursR/documents/KursDateien.zip&quot;,
+    destfile = &quot;KursDateien.zip&quot;, method = &quot;curl&quot;)
+unzip(&quot;KursDateien.zip&quot;, overwrite = TRUE)
+unlink(&quot;KursDateien.zip&quot;)</code></pre>
 
     </div>
   </article>
@@ -116,6 +103,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
