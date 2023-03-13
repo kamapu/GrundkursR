@@ -27,9 +27,10 @@ Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätze
 
 [Folien](documents/FolienRKurs-34.pdf)
 
-<!--
 
 [Skript Tag 3](documents/Tag3.R)
+
+<!--
 [Skript Tag 4](documents/Tag4.R)
 
 # Termine 5 und 6
