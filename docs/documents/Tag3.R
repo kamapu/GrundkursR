@@ -1,84 +1,108 @@
-# Funktionen ----
+# Tag 3: Fangen wir mit Funktionen ----
 
-A <- c(3, NA, 7)
-mean(A)
-mean(A, na.rm = TRUE)
-mean(x = A, na.rm = TRUE)
-mean(na.rm = TRUE, x = A)
-mean(A, TRUE)
-mean(A,,TRUE)
+Prozent <- function(x, n) {
+  return(x/n*100)
+}
+
+Prozent(x = 1, n = 2)
+Prozent(x = 1)
+
+Prozent(1, 2)
+
+Prozent(n = 2, x = 1)
+
+Prozent <- function(x, n = 1) {
+  return(x/n*100)
+}
+
+Prozent(0.2)
+
+tProzent <- function(..., sep = "",
+                     suffix = "%") {
+  P <- Prozent(...)
+  return(paste0(P, sep, suffix))
+}
+
+tProzent(1)
+tProzent(1, sep = " ")
+tProzent(1, sep = " ", suffix = "Prozent")
+tProzent(1, suffix = "")
+
+tProzent(1, 2)
 
 # Matrix ----
-M <- matrix(c(1:20), nrow = 4)
+M <- matrix(c(1:20), nrow = 5,
+            byrow = TRUE)
 M
-N <- matrix(c(1:20), nrow = 4, byrow = TRUE)
-N
-N[,2]
-N[2,]
-N[2,2]
-N[2,2] <- 100
-N
-N[N < 5] <- 500
-N
-length(N)
 
-N[1,5] <- "ich"
+class(M)
+mode(M)
+
+N <- matrix(letters, nrow = 5,
+            ncol = 4)
 N
-
-A <- 1:100
-A[5] <- "du"
-
-A + 10
-
 class(N)
+mode(N)
 
-# Datensatz ----
-data()
-data(iris)
-class(iris)
+N[,2]
+N[5,]
+N[,c(TRUE, FALSE, TRUE, TRUE)]
+N[,-2]
 
-head(iris)
-tail(iris)
-str(iris)
-summary(iris)
-
-iris[, 2]
-iris[5,]
-
-my_iris <- iris
-
-iris$Species
-iris$Species[100]
-
-iris[ , "Petal.Width"]
+M*100
 
 # Liste ----
+Sachen <- list(A = 1:100,
+               B = "Ich",
+               C = matrix(c(1:10),
+                          ncol = 5))
+Sachen[[2]]
+Sachen[["B"]]
+Sachen$B
 
-MeineListe <- list(
-  A = 1:100,
-  B = matrix(c(1:20), nrow = 4)
+Sachen$MeinName <-c("Miguel",
+                    "Alvarez")
+Sachen$Person <- list(Name = "Miguel",
+                      Alter = 30,
+                      Herkunft = "Chile")
+Sachen$Person$Alter
+class(Sachen)
+class(Sachen$Person)
+class(Sachen$Person$Alter)
+class(Sachen$Person$Name)
+
+P1 <- list(Vorname = "Miguel",
+           Nachname = "Alvarez",
+           Alter = 30)
+P2 <- list(Name = c(Vorname = "Miguel",
+                    Nachname = "Alvarez"),
+           Alter = 30)
+
+print(paste(P1$Vorname, P1$Nachname))
+print(paste(P2$Name, collapse = " "))
+
+P1$Vorname
+P2$Name["Vorname"]
+
+names(P1$Vorname)
+names(P2$Name)
+
+# Datensatz ----
+# data.frame
+
+P3 <- data.frame(
+  Vorname = c("Tim", "Liana"),
+  Nachname = c("Müller", "Jäger"),
+  Alter = c(20, 25)
 )
+P3
+class(P3$Vorname)
+class(P3$Alter)
+P3[["Vorname"]]
 
-MeineListe$A
-MeineListe[[1]]
-iris[[1]]
+rm(list = ls())
 
-MeineListe[["A"]]
-iris[["Petal.Length"]]
-
-# Zurück zu Datensätze ----
-summary(iris$Species)
-
-setosa <- subset(iris, Species == "setosa")
-summary(setosa)
-
-no_setosa <- subset(iris, Species != "setosa")
-no_setosa <- subset(iris,
-      Species %in% c("versicolor", "virginica"))
-summary(no_setosa)
-
-mean(iris$Sepal.Length)
-
-big_fl <- subset(iris, Sepal.Length >
-                   mean(Sepal.Length))
-summary(big_fl)
+data()
+data(iris)
+head(iris)
+?iris
