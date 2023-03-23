@@ -1,77 +1,111 @@
-# Kursdateien herunterladen ----
-download.file(url = "https://kamapu.github.io/RKurs-VHS-2022/documents/KursDateien.zip",
-              destfile = "KursDateien.zip", method = "curl")
+# Datensätze laden ----
+download.file(
+  url = "https://kamapu.github.io/GrundkursR/documents/KursDateien.zip",
+  destfile = "KursDateien.zip", method = "curl")
 unzip("KursDateien.zip", overwrite = TRUE)
 unlink("KursDateien.zip")
 
-# Dateien Lesen ----
 library(readODS)
 
-Bonn2019 <- read_ods("Bevoelkerung.ods", sheet = "2019")
-Bonn2020 <- read_ods("Bevoelkerung.ods", sheet = "2020")
+Bonn2019 <- read_ods(
+  path = "Bevoelkerung.ods",
+  sheet = "2019")
 
-Bonn <- list()
-Bonn$"2019" <- read_ods("Bevoelkerung.ods", sheet = "2019")
-Bonn[["2019"]] <- read_ods("Bevoelkerung.ods", sheet = "2019")
+summary(Bonn2019$BezirkNr)
+head(Bonn2019)
+tail(Bonn2019)
 
-Bonn <- list()
-for (i in as.character(2019:2021))
-  Bonn[[i]] <- read_ods("Bevoelkerung.ods", sheet = i)
+Bonn2019 <- subset(Bonn2019, !is.na(BezirkNr))
+tail(Bonn2019)
 
-names(Bonn)
+Auswahl <- c("BezirkNr", "BezirkName", "Maenner",
+          "Frauen")
+Bonn2019 <- Bonn2019[,Auswahl]
 
-Bonn <- readRDS("BonnBevoelkerung.rds")
-str(Bonn)
-head(Bonn)
-tail(Bonn)
+# Alternative 2
+Bonn2019 <- read_ods(
+  path = "Bevoelkerung.ods",
+  sheet = "2019")
+Auswahl <- c("BezirkNr", "BezirkName", "Maenner",
+             "Frauen")
+Bonn2019 <- Bonn2019[!is.na(Bonn2019$BezirkNr),
+                     Auswahl]
 
-summary(Bonn)
+# Gesamter Datensatz
+Bevoelkerung <- readRDS("BonnBevoelkerung.rds")
+head(Bevoelkerung)
 
-Bezirke <- readRDS("BonnBezirke.rds")
+# Spalten los werden
+Bevoelkerung <- Bevoelkerung[ , -3]
+head(Bevoelkerung)
 
-# Zusammenfügen von Datensätze ----
-names(Bezirke)
-names(Bonn)
+Wegtun <- c("Maenner", "Frauen")
+Bevoelkerung <- Bevoelkerung[,
+ !names(Bevoelkerung) %in% Wegtun]
 
-Bonn <- merge(Bezirke, Bonn)
-head(Bonn)
+Auswahl <- c("Auslaender", "Jahr")
+head(Bevoelkerung[,Auswahl])
+head(Bevoelkerung[
+  names(Bevoelkerung) %in% Auswahl])
 
-# Aggregieren ----
-aggregate(Gesamt ~ StadtBezirk, FUN = sum, data = Bonn)
-aggregate(Gesamt ~ StadtBezirk, FUN = sum, data = subset(Bonn, Jahr == 2019))
-aggregate(Gesamt ~ StadtBezirk + Jahr, FUN = sum, data = Bonn)
-aggregate(Gesamt ~ Jahr + StadtBezirk, FUN = sum, data = Bonn)
+Auswahl <- c("Auslaender", "Jahr", "Katze")
+head(Bevoelkerung[,Auswahl])
+head(Bevoelkerung[
+  names(Bevoelkerung) %in% Auswahl])
 
-# Graphiken ----
-Bonn2020 <- subset(Bonn, Jahr == 2020)
+# Datenverarbeitung 
+rm(list = ls())
+Bevoelkerung <-
+  readRDS("BonnBevoelkerung.rds")
 
-old_par <- par()
-#par(old_par)
+comment(Bevoelkerung$DichteKm2) <-
+  "Anzahl gesamte Einwohner pro Km2"
+comment(Bevoelkerung$DichteKm2)
 
-# Plot
-plot(Bonn2020[ , c("Frauen", "Maenner")], xlim = c(0, 7000),
-     ylim = c(0, 7000), main = "Maenner vs. Frauen",
-     xlab = "Anzahl von Frauen pro Statistisches Bezirk",
-     ylab = "Anzahl von Frauen pro Statistisches Bezirk")
-abline(0, 1, col = "red", lty = "dashed")
+# Umwandlung
+iris$Sepal.Length
+iris$Sepal.Length <- iris$Sepal.Length * 10
+iris$Sepal.Length
 
-?par
+# Variablen Bilden
+Bevoelkerung$FrauenAnteil <-
+  Bevoelkerung$Frauen/(Bevoelkerung$Frauen +
+                         Bevoelkerung$Maenner)
 
-par(mar = c(5, 4, 1, 1) + 0.1)
+hist(Bevoelkerung$FrauenAnteil)
+summary(Bevoelkerung$FrauenAnteil)
+boxplot(Bevoelkerung$FrauenAnteil)
 
-# Plot
-plot(Bonn2020[ , c("Frauen", "Maenner")], xlim = c(0, 7000),
-     ylim = c(0, 7000),
-     xlab = "Anzahl von Frauen pro Statistisches Bezirk",
-     ylab = "Anzahl von Frauen pro Statistisches Bezirk",
-     type = "n")
-abline(0, 1, col = "red", lty = "dashed")
-points(Bonn2020[ , c("Frauen", "Maenner")], pch = 21,
-       bg = c("orange", "red", "green", "blue")[unclass(Bonn2020$StadtBezirk)],
-       cex = 1.5)
-text(Bonn2020[ , c("Frauen", "Maenner")], labels = Bonn2020$BezirkName,
-     cex = 0.7, pos = 2)
-legend("bottomright", pch = 21, pt.bg = c("orange", "red", "green", "blue"),
-       legend = levels(Bonn2020$StadtBezirk))
+attach(Bevoelkerung)
+unique(Bevoelkerung$Jahr)
+unique(Jahr)
+detach(Bevoelkerung)
 
-summary(Bonn2020$StadtBezirk)
+unique(Bevoelkerung$Jahr)
+unique(Jahr)
+
+with(Bevoelkerung, {
+  print(summary(Gesamt))
+  print(mean(Gesamt))
+})
+
+with(Bevoelkerung, {
+  plot(Gesamt, Maenner + Frauen)
+  abline(a = 0, b = 1, lty = 2, col = "red")
+})
+
+with(Bevoelkerung, {
+  all(Gesamt == Maenner + Frauen)
+})
+
+subset(Bevoelkerung, Gesamt != Maenner + Frauen)
+1509 + 1578
+
+B2020 <- subset(Bevoelkerung, Jahr == 2020)
+
+mean(B2020$Gesamt)
+sum(B2020$Gesamt)
+
+# Aggregate
+aggregate(Gesamt ~ Jahr, data = Bevoelkerung,
+          FUN = sum)
