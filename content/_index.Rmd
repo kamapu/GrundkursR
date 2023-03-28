@@ -37,17 +37,20 @@ Statistische Auswertungen von Datensätzen (Klasse `data.frame`) und
 Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für
 Datenverwaltung diskutiert.
 
-<!--
+[Folien](documents/FolienRKurs-56.pdf)
 
 [Skript Tag 5](documents/Tag5.R)
 [Skript Tag 6](documents/Tag6.R)
 
 # Termine 7 und 8
 
+Zweite Runde mit Plots, diesmal handeln wir Funktionen vom Paket `ggplot2`.
 Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode.
-Erzeugung von Dokumenten mit den Paketen `knitr` und `rmarkdown`.
+Nach der letzten Sitzung bist du kein Anfänger mehr.
 
 [Folien](documents/FolienRKurs-78.pdf)
+
+<!--
 
 [Skript Tag 7](documents/Tag7.R)
 [Quellcode für Tag 7](documents/MeineFunktionen.R)

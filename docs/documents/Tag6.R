@@ -1,107 +1,96 @@
-# Ein neuer Tag ----
+# Datenverarbeitung ----
 download.file(
-  url = "https://kamapu.github.io/RKurs-VHS-2022/documents/KursDateien.zip",
-              destfile = "KursDateien.zip", method = "curl")
+  url = "https://kamapu.github.io/GrundkursR/documents/KursDateien.zip",
+  destfile = "KursDateien.zip", method = "curl")
 unzip("KursDateien.zip", overwrite = TRUE)
 unlink("KursDateien.zip")
 
-# Dateien in der Sitzung laden
-Bonn <- readRDS("BonnBevoelkerung.rds")
+Bevoelkerung <- readRDS("BonnBevoelkerung.rds")
+
+head(Bevoelkerung)
+tail(Bevoelkerung)
+
+str(Bevoelkerung)
+summary(Bevoelkerung)
+
 Bezirke <- readRDS("BonnBezirke.rds")
+head(Bezirke)
 
-Bonn <- merge (Bonn, Bezirke)
-rm(Bezirke)
+unique(Bezirke$StadtBezirk)
 
-# subset
-Bonn2019 <- subset(Bonn, Jahr == 2019)
+Bevoelkerung <- merge(Bevoelkerung, Bezirke)
+head(Bevoelkerung)
 
-# attach()
-summary(Gesamt)
-summary(Bonn$Gesamt)
-
-attach(Bonn)
-summary(Gesamt)
-detach(Bonn)
-
-summary(Gesamt)
-
-attach(Bonn)
-plot(FlaecheKm2, Gesamt)
-detach(Bonn)
-
-with(Bonn, {
-  plot(FlaecheKm2[Jahr == 2020], Gesamt[Jahr == 2020])
+Bevoelkerung$Dichte_2 <- with(Bevoelkerung, {
+  Gesamt/FlaecheKm2
 })
 
-# Histogram
-hist(Bonn$Gesamt, freq = FALSE)
+plot(Bevoelkerung[ ,
+              c("DichteKm2", "Dichte_2")])
+abline(a = 0, b = 1, lty = 2, col = "red")
 
-# Boxplots
-boxplot(Bonn$Gesamt)
-summary(Bonn$Gesamt)
+subset(Bevoelkerung, Dichte_2 != DichteKm2)
 
-# Histogram + Boxplot
-par(mfrow = c(2, 1))
-boxplot(Bonn$Gesamt, horizontal = TRUE)
-hist(Bonn$Gesamt, freq = FALSE)
+with(subset(Bevoelkerung, Jahr == 2019), {
+  plot(DichteKm2, Dichte_2)
+  abline(a = 0, b = 1, lty = "dashed",
+         col = "red")
+  text(DichteKm2, Dichte_2,
+       col = "darkolivegreen4",
+       labels = BezirkName, cex = 0.5,
+       pos = 4)
+})
 
-# 
-par(mfrow = c(1,1))
-hist(Bonn$Gesamt, freq = FALSE)
+text(5000, 10000, labels = "Cooles Graphik!")
 
-# Kuchendiagram
-Bonn2020 <- aggregate(Gesamt ~ StadtBezirk,
-      data = subset(Bonn, Jahr == 2020),
-      FUN = sum)
-Bonn2020
 
-pie(Bonn2020$Gesamt, labels = Bonn2020$StadtBezirk)
 
-barplot(Bonn2020$Gesamt)
+Bonn <- aggregate(Gesamt ~ Jahr,
+                  data = Bevoelkerung,
+                  FUN = sum)
 
-tmp_vector <- Bonn2020$Gesamt
-names(tmp_vector) <- Bonn2020$StadtBezirk
-tmp_vector
+barplot(Bonn$Gesamt, names.arg = Bonn$Jahr,
+        ylim = c(336000, 0))
 
-barplot(tmp_vector, col = c("white", "black"))
+Bonn <- aggregate(Gesamt ~ Jahr + StadtBezirk,
+                  data = Bevoelkerung,
+                  FUN = sum)
+Bonn
 
-Bonn_agg <- aggregate(Gesamt ~ StadtBezirk + Jahr,
-                      data = Bonn, FUN = sum)
-barplot(Gesamt ~ StadtBezirk + Jahr, data = Bonn_agg,
-        beside = TRUE,
-        legend.text = levels(Bonn_agg$StadtBezirk),
-        col = c("darkgreen", "red", "blue", "orange"))
+Bonn2019 <- subset(Bevoelkerung, Jahr == 2019)
+Bonn2019_summ <- aggregate(Gesamt ~ StadtBezirk,
+                    data = Bonn2019,
+                    FUN = sum)
+Bonn2019_summ
 
-# Boxplot mit Formula
-boxplot(Gesamt ~ StadtBezirk, data = Bonn)
-boxplot(Gesamt ~ StadtBezirk + Jahr, data = Bonn)
+pie(Bonn2019_summ$Gesamt,
+    labels = Bonn2019_summ$StadtBezirk)
 
-text(2, 12000, labels = "Ich sehe keine Unterschied!",
-     cex = 2, col = "red", pos = 4)
+with(Bonn2019_summ, {
+  pie(Gesamt, labels = Gesamt)
+})
 
-# Parametrische Statistiken -------------------
+with(Bonn2019_summ, {
+  pie(Gesamt,
+      labels = paste0(StadtBezirk,
+                      "\n(", Gesamt, ")"))
+})
 
-rm(list =ls())
-Afrika <- read.csv("Africa.env.csv")
+install.packages("tidyr")
 
-summary(Afrika$EC)
-boxplot(EC ~ Country, data = Afrika)
-boxplot(EC ~ Locality, data = Afrika)
+library(tidyr)
 
-# Normalverteilung
-hist(Afrika$EC)
+Gender <- pivot_longer(data = Bonn2019,
+            cols = c("Frauen", "Maenner"),
+            values_to = "Anzahl",
+            names_to = "Geschlecht")
 
-hist(Afrika$EC[Afrika$Locality == "Rumuruti"])
+Gender_summ <- aggregate(Anzahl ~ Geschlecht,
+                data = Gender, FUN = sum)
 
-ANOVA <- aov(EC ~ Country, data = Afrika)
-summary(ANOVA)
+with(Gender_summ, {
+  pie(Anzahl, labels = Geschlecht)
+})
 
-Residuals <- resid(ANOVA)
-hist(Residuals, freq = FALSE)
-curve(dnorm(x, mean = mean(Residuals), sd = sd(Residuals)),
-      col = "red", add = TRUE)
 
-shapiro.test(Residuals)
 
-str(ANOVA)
-str(summary(ANOVA))
