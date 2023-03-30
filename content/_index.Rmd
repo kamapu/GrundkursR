@@ -50,9 +50,9 @@ Nach der letzten Sitzung bist du kein Anfänger mehr.
 
 [Folien](documents/FolienRKurs-78.pdf)
 
-<!--
-
 [Skript Tag 7](documents/Tag7.R)
+
+<!--
 [Quellcode für Tag 7](documents/MeineFunktionen.R)
 
 [Skript Tag 8](documents/Tag8.R)

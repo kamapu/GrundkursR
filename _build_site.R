@@ -44,7 +44,7 @@ Files <- sub(".Rmd", ".pdf", Files, fixed = TRUE)
 file.copy(from = Files, to = "static/documents", overwrite = TRUE)
 
 # Build the page
-build_site(build_rmd = TRUE)
+# build_site(build_rmd = TRUE)
 ## serve_site()
 ## stop_server()
 
@@ -52,4 +52,5 @@ build_site(build_rmd = TRUE)
 Files <- list.files(recursive = TRUE, full.names = TRUE)
 add(path = Files)
 commit(message = "Commit from git2r")
+system("git push")
 ## push() # TODO: Wise way to add credentials
