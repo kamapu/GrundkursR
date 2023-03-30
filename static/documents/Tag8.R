@@ -1,26 +1,36 @@
-# Die Zeit in R ----
+# Statistiken ----
 
-## Zeit ----
-Zeit <- Sys.time()
-class(Zeit)
+data("iris")
 
-Datum <- Sys.Date()
-class(Datum)
+summary(iris)
 
-Geburtsdatum <- as.Date("1978-10-27")
-Sys.Date() - Geburtsdatum
+mean(iris$Sepal.Length)
+sd(iris$Sepal.Length)
+var(iris$Sepal.Length)
 
-Geburtsdatum
-as.integer(Geburtsdatum)
+sqrt(var(iris$Sepal.Length))
 
-as.Date("27.10.1978")
-?strptime
-D1 <- as.Date(strptime("27.10.1978", format = "%d.%m.%Y"))
-class(D1)
+x <- iris$Sepal.Length
 
-Heute <- Sys.Date()
-format(Heute, format = "%u")
-format(Heute, format = "%A")
-format(Heute, format = "%V")
+# Variationskoeffizient
+sd(x)/mean(x)
 
-# Jetzt Rmarkdown ----
+hist(iris$Petal.Length)
+
+# Lineare Regression
+pairs(iris)
+
+Model1 <- lm(Petal.Width ~ Petal.Length,
+             data = iris)
+class(Model1)
+str(Model1)
+summary(Model1)
+Model1
+
+with(iris, plot(Petal.Length, Petal.Width,
+                pch = 21, col = "blue",
+                bg = "orange"))
+abline(Model1, lty = "dotted",
+       col = "darkgreen")
+?points
+
