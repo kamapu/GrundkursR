@@ -1,0 +1,13 @@
+---
+title: Anleitungen
+author: Miguel Alvarez
+date: 2023-03-30
+output: blogdown::html_page
+---
+
+Eine kleine Auswahl von Anleitungen in Diensten, die Online Kurse anbieten.
+
+- [datacamp](https://www.datacamp.com/courses/free-introduction-to-r)
+- [SKILL SHARE.](https://www.skillshare.com/en/search?query=R+Programming)
+- [udemy](https://www.udemy.com/courses/search/?src=ukw&q=r+intro)
+- [W^3^ schools](https://www.w3schools.com/r/)

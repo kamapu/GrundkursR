@@ -1,152 +1,128 @@
-# Ein neuer Tag ----
-download.file(
-  url = "https://kamapu.github.io/RKurs-VHS-2022/documents/KursDateien.zip",
-  destfile = "KursDateien.zip", method = "curl")
-unzip("KursDateien.zip", overwrite = TRUE)
-unlink("KursDateien.zip")
+# Recap ----
+data(iris)
 
-# Dateien in der Sitzung laden
-Bonn <- readRDS("BonnBevoelkerung.rds")
-Bezirke <- readRDS("BonnBezirke.rds")
+with(iris, {
+  plot(Petal.Length, Sepal.Length,
+       main = "Sepal vs. Petal",
+       col = Species, pch = 16,
+       cex = 2, xlim = c(0, 8),
+       ylim = c(0, 8))
+  abline(a = 0, b = 1, lty = 2,
+         col = "orange")
+})
 
-Bonn <- merge (Bonn, Bezirke)
-rm(Bezirke)
+par(mar = c(5, 5, 0.5, 0.5))
 
-# Cross-check auf Konsistenz ----
-with(Bonn, all(Frauen + Maenner == Gesamt))
-subset(Bonn, Frauen + Maenner != Gesamt)
-1509+1578
+with(iris, {
+  plot(Petal.Length, Sepal.Length,
+       col = Species, pch = 16,
+       cex = 2, xlim = c(0, 8),
+       ylim = c(0, 8))
+  abline(a = 0, b = 1, lty = 2,
+         col = "orange")
+})
 
-# Tabellen umstellen ---
-Bonn$Eing <- with(Bonn, Gesamt - Auslaender)
+dev.copy(png, width = 700,
+         height = 700, res = 300,
+         file = "plot_small.png")
+dev.off()
 
-library(tidyr)
+with(iris, {
+  plot(Petal.Length, Sepal.Length,
+       col = Species, pch = 16,
+       cex = 2, xlim = c(0, 8),
+       ylim = c(0, 8),
+       xlab = "Petals", ylab = "Sepals")
+  abline(a = 0, b = 1, lty = 2,
+         col = "orange")
+})
 
-Bonn_long <- pivot_longer(Bonn, cols = c("Eing", "Auslaender"),
-                   names_to = "Herkunft", values_to = "Anzahl")
-head(Bonn_long)
+dev.copy(png, width = 1200,
+         height = 1200, res = 150,
+         file = "plot_big.png")
+dev.off()
 
-Bonn_aggr <- aggregate(Anzahl ~ StadtBezirk + Herkunft,
-                       data = subset(Bonn_long, Jahr == 2020),
-                       FUN = sum)
+dev.off()
 
-Bonn_aggr <- split(Bonn_aggr, Bonn_aggr$StadtBezirk)
+# Faktoren ----
 
-# Loop
-par_old <- par(no.readonly = TRUE)
+meinFaktor <- sample(
+  c("klein", "mittel", "groß"),
+          size = 100, replace = TRUE)
+summary(meinFaktor)
 
-par(par_old)
+meinFaktor <- as.factor(meinFaktor)
+summary(meinFaktor)
 
-names(Bonn_aggr)
+meinFaktor <- factor(meinFaktor,
+                     levels = c("klein", "mittel", "groß"))
+summary(meinFaktor)
 
-par(mfrow = c(2, 2))
-for(i in names(Bonn_aggr)) {
-  x <- Bonn_aggr[[i]]$Anzahl
-  names(x) <- Bonn_aggr[[i]]$Herkunft
-  pie(x, main = i)
-}
+neuerFaktor <- c(meinFaktor, "supergroß")
+summary(as.factor(neuerFaktor))
+summary(neuerFaktor)
 
-# ggplot 2 ----
-# Schau mal das Inhaltsverzeichnis
+levels(meinFaktor) <-
+  c(levels(meinFaktor), "supergroß")
+levels(meinFaktor)
+summary(meinFaktor)
 
-## boxplots ----
+meinFaktor <- sample(x = 1:3,
+                     size = 100,
+                     replace = TRUE)
+summary(meinFaktor)
+summary(as.factor(meinFaktor))
+unique(meinFaktor)
 
-### ein Beispiel ----
+meinFaktor <- factor(meinFaktor,
+  levels = 1:3,
+  labels = c("leicht", "mittel", "schwer"))
+summary(meinFaktor)
 
+data("iris")
+
+boxplot(Sepal.Length ~ Species,
+        data = iris)
+
+iris$Species <- factor(iris$Species,
+  levels =
+    rev(levels(iris$Species)))
+
+boxplot(Sepal.Length ~ Species,
+        data = iris)
+
+
+rev(levels(iris$Species))
+
+levels(iris$Species) <-
+  rev(levels(iris$Species))
+
+boxplot(Sepal.Length ~ Species,
+        data = iris)
+
+# ggplots ----
 library(ggplot2)
+data("iris")
 
-par(par_old)
+ggplot(data = iris,
+       mapping = aes(
+         x = Petal.Length,
+         y = Sepal.Length)) +
+  geom_point()
 
-meinGrafik <- Bonn %>%
-  ggplot(aes(x = StadtBezirk, y = Gesamt,
-             fill = StadtBezirk)) +
-  geom_boxplot()
-meinGrafik
+Plot1 <- ggplot(data = iris,
+       mapping = aes(
+         x = Petal.Length,
+         y = Sepal.Length,
+         color = Species)) +
+  geom_point()
 
-meinGrafik <- ggplot(Bonn, aes(x = StadtBezirk, y = Gesamt,
-           fill = StadtBezirk)) +
-  geom_boxplot()
+Plot1
 
-# Neue Schichten auf gespeicherte Grafik
-meinGrafik +
-  facet_wrap(~Jahr)
+Plot1 +
+  facet_wrap(~ Species, ncol = 2)
+  
+saveRDS(Plot1, "plot1_ggplot.rds")
 
-# Automatisieren ----
-# Loops
-# Funktionen
-# Quellcode
-# Paket
-
-## Loop ----
-for (i in names(Bonn)) {
-  if (is.numeric(Bonn[[i]])) {
-    print(paste(i, mean(Bonn[[i]])))
-  } else {
-    next
-  }
-}
-
-Mittelwert <-list()
-for (i in names(Bonn)) {
-  if (is.numeric(Bonn[[i]])) {
-    Mittelwert[[i]] <- mean(Bonn[[i]])
-  }
-}
-Mittelwert
-
-Mittelwert <- do.call(c, Mittelwert)
-Mittelwert
-
-## Funktionen ----
-BonnStats <- function(x) {
-  out <- c(mean(x), sd(x))
-  names(out) <- c("Mittelwert", "Standardabweichung")
-  return(out)
-}
-
-BonnStats(Bonn$Gesamt)
-BonnStats(Bonn$Frauen)
-
-x <- Bonn$Gesamt
-x[c(5, 15)] <- NA
-summary(x)
-
-BonnStats(x)
-
-?mean
-?sd
-
-BonnStats <- function(x, ...) {
-  out <- c(mean(x, ...), sd(x, ...))
-  names(out) <- c("Mittelwert", "Standardabweichung")
-  return(out)
-}
-
-BonnStats(x)
-BonnStats(x, na.rm = TRUE)
-
-BonnStats(Bonn$BezirkName)
-
-BonnStats <- function(x, ...) {
-  if (!is.numeric(x))
-    stop("Der Wert 'x' muss numerisch sein!")
-  out <- c(mean(x, ...), sd(x, ...))
-  names(out) <- c("Mittelwert", "Standardabweichung")
-  return(out)
-}
-
-BonnStats(Bonn$BezirkName)
-
-## Quellcode ----
-# Check in Skript 'MeineFunktionen.R'
-
-# Löschen der Funktion
-rm(BonnStats)
-BonnStats(Bonn$BezirkName)
-
-# Lade die Funktion auf den Quellcode
-source("MeineFunktionen.R")
-
-# Lade und in die Konsole zeigen
-rm(BonnStats)
-source("MeineFunktionen.R", echo = TRUE)
+ggsave(filename = "Plot1_gg.png")
+ggsave(filename = "Plot1_gg.jpg")

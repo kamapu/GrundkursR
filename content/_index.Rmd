@@ -52,10 +52,13 @@ Nach der letzten Sitzung bist du kein Anfänger mehr.
 
 [Skript Tag 7](documents/Tag7.R)
 
+[Skript Tag 8](documents/Tag8.R)
+
+[Notizbuch mit Rmarkdown](documents/meinNotebook.Rmd)
+
 <!--
 [Quellcode für Tag 7](documents/MeineFunktionen.R)
 
-[Skript Tag 8](documents/Tag8.R)
 [Dokument als Rmarkdown](documents/Statistik.Rmd)
 
 -->

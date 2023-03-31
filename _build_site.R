@@ -8,7 +8,7 @@ library(blogdown)
 library(biblio)
 library(readODS)
 library(zip)
-library("git2r")
+## library("git2r")
 
 Repo <- "../../courses-miguel/GrundkursR"
 
@@ -44,13 +44,13 @@ Files <- sub(".Rmd", ".pdf", Files, fixed = TRUE)
 file.copy(from = Files, to = "static/documents", overwrite = TRUE)
 
 # Build the page
-# build_site(build_rmd = TRUE)
+build_site(build_rmd = TRUE)
 ## serve_site()
 ## stop_server()
 
 # Commit changes
-Files <- list.files(recursive = TRUE, full.names = TRUE)
-add(path = Files)
-commit(message = "Commit from git2r")
-system("git push")
+## Files <- list.files(recursive = TRUE, full.names = TRUE)
+## add(path = Files)
+## commit(message = "Commit from git2r")
+system("git add . && git commit -m \"Commit from eclipse.\" && git push")
 ## push() # TODO: Wise way to add credentials

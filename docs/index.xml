@@ -6,7 +6,17 @@
     <description>Recent content in Statistiken und Graphiken mit R on R Kurs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kamapu.github.io/GrundkursR/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kamapu.github.io/GrundkursR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anleitungen</title>
+      <link>https://kamapu.github.io/GrundkursR/2023/03/30/anleitungen/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kamapu.github.io/GrundkursR/2023/03/30/anleitungen/</guid>
+      <description> Eine kleine Auswahl von Anleitungen in Diensten, die Online Kurse anbieten.
+datacamp SKILL SHARE. udemy W3 schools </description>
+    </item>
+    
     <item>
       <title>Dateien herunterladen</title>
       <link>https://kamapu.github.io/GrundkursR/2023/03/09/dateien-herunterladen/</link>
