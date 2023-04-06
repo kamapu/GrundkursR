@@ -1,6 +1,8 @@
 ---
 title: Kurs Materialien
-output: blogdown::html_page
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 # Extras
