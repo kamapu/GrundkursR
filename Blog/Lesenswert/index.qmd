@@ -21,7 +21,7 @@ library(readODS)
 library(biblio)
 
 # Reference list
-Refs <- read_ods("bib_references.ods")
+Refs <- read.csv("bib_references.csv")
 
 Bib <- read_bib("../../../../db-dumps/literatur_db/bib/MiguelReferences.bib")
 Bib <- subset(Bib, bibtexkey %in% Refs$bibtexkey)
