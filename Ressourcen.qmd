@@ -1,0 +1,17 @@
+---
+title: Ressourcen
+---
+
+# Datensätze
+
+Die benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden [Link](Dateien/KursDateien.zip).
+
+Um diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe
+folgende Befehle in deiner Sitzung:
+
+```{r eval=FALSE}
+download.file(url = "https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip",
+    destfile = "KursDateien.zip", method = "curl")
+unzip("KursDateien.zip", overwrite = TRUE)
+unlink("KursDateien.zip")
+```

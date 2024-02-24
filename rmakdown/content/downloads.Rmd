@@ -11,6 +11,8 @@ output:
 
 [Literaturhinweis](../documents/Referenzen.pdf)
 
+<!--
+
 # Folien
 
 [Termine 1 & 2](../documents/FolienRKurs-12.pdf)
@@ -22,6 +24,8 @@ output:
 # Skripte und Datensätze
 
 [Datensatz](../2023/03/09/dateien-herunterladen/)
+
+-->
 
 <!--
 

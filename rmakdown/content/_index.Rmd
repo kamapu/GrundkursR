@@ -10,6 +10,8 @@ Der Kurs ist von der Volkshochschule Bonn organisiert. Für weitere Infos,
 klicken Sie
 [hier](https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html/kurs/484-C-F5725/t/statistik-und-graphiken-mit-r-einfuehrungskurs-2-x-woechentlich).
 
+<!--
+
 # Termine 1 und 2
 
 Einstieg in das Syntax und die Datentypen in **R**, inklusive eine Einführung in
@@ -55,6 +57,7 @@ Nach der letzten Sitzung bist du kein Anfänger mehr.
 [Skript Tag 8](documents/Tag8.R)
 
 [Notizbuch mit Rmarkdown](documents/meinNotebook.Rmd)
+
 
 <!--
 [Quellcode für Tag 7](documents/MeineFunktionen.R)

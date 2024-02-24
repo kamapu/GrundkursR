@@ -1,0 +1,70 @@
+---
+title: Erforderliche Software und Pakete
+date: '2024-02-23'
+date-modified: '`r Sys.Date()`'
+image: logo-software.png
+categories:
+  - Zusatzmaterial
+description:
+  Software und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.
+draft: false
+---
+
+# Software
+
+Der Kurs findet in einem Computerraum statt und Sie benötigen keine zusätzliche Ausrüstung, außer Enthusiasmus und gute Laune.
+
+Wenn Sie zu Hause üben möchten, finden Sie hier eine Liste der Programme, die Sie auf Ihrem eigenen Computer installieren müssen.
+
+
+## [R](https://cran.r-project.org/bin/windows/base/)
+
+Das Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.
+
+Achten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software.
+Daher sollte man ältere Versionen selber deinstallieren.
+
+
+## [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+
+RStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht.
+Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen.
+
+<!--
+
+## RTools
+
+
+## LibreOffice
+
+Dies ist eine Alternative zu Microsoft Windows und wird aus folgenden Gründen
+bevorzugt:
+
+- Es ist kostenlos (Freeware)
+- Der Import von größeren Tabellen im Format *.ods verhält sich besser als bei
+  *.xlsx
+- Es beinhaltet ein relationales Datenbanksystem (Base) während bei manchen
+  Lizensen von Microsoft Office die Variante Microsoft Access fehlt
+  
+Hier die Seite zu der Setup-Datei. Wähle die neueste Version und achte auf das
+ausgewählte Betriebssystem:
+
+<https://de.libreoffice.org/download/download/>
+
+# MikTeX
+
+Eine \LaTeX Distribution für verschiedene Betriebssysteme. Es wird für die
+Erstellung von PDF-Dokumente mittels Rmarkdown benötigt.
+
+<https://miktex.org/download>
+
+# pandoc
+
+Software für die Umwandlung von Dokumente in verschiedenen Formatten. Es wird
+von Rmarkdown benötigt.
+
+<https://pandoc.org/installing.html>
+
+# R-Pakete
+
+-->

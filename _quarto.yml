@@ -1,0 +1,37 @@
+project:
+  type: website
+  resources: ["Dateien/KursDateien.zip"]
+  #resources: ["documents/screenplay.pdf","documents/vegetation_in_r.pdf"]
+  #output-dir: public
+  output-dir: docs
+  preview: 
+    port: 4200
+    browser: true
+  render: 
+    - "*.qmd"
+    - "!github/"
+
+website:
+  title: ""
+  favicon: /images/favicon.ico
+  sidebar:
+    logo: /images/R_logo.png
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  #  logo: /images/logo.png
+    right: 
+      - href: Ressourcen.qmd
+        text: Ressourcen
+      - href: Termine.qmd
+        text: Termine
+      - href: Blog.qmd
+        text: Blog
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
+    lang: de

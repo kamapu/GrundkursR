@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistiken und Graphiken mit R",
+    "section": "",
+    "text": "Willkommen zu diesem Einführungskurs!\nR ist eine sehr vielseitige Programmiersprache und freie Software mit besonderen Stärken in den Bereichen Statistik und Datenvisualisierung. Als eines der beliebtesten Werkzeuge für die statistische Datenanalyse ist R bei Profis und Amateuren gleichermaßen beliebt. In diesem Kurs erhalten Sie eine solide Einführung in die Grundlagen der Programmierung mit R und lernen den Umgang mit RStudio. Anhand von praktischen Übungen werden Tabellen und Grafiken erstellt."
+  },
+  {
+    "objectID": "Termine.html",
+    "href": "Termine.html",
+    "title": "Termine",
+    "section": "",
+    "text": "Termine 1 und 2\n27. und 29. Februar 2024\nEinstieg in das Syntax und die Datentypen in R, inklusive eine Einführung in die Nutzung von RStudio."
+  },
+  {
+    "objectID": "Blog/Software/index.html",
+    "href": "Blog/Software/index.html",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "Der Kurs findet in einem Computerraum statt und Sie benötigen keine zusätzliche Ausrüstung, außer Enthusiasmus und gute Laune.\nWenn Sie zu Hause üben möchten, finden Sie hier eine Liste der Programme, die Sie auf Ihrem eigenen Computer installieren müssen.\n\n\nDas Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren.\n\n\n\nRStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
+  },
+  {
+    "objectID": "Blog/Software/index.html#r",
+    "href": "Blog/Software/index.html#r",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "Das Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren."
+  },
+  {
+    "objectID": "Blog/Software/index.html#rstudio",
+    "href": "Blog/Software/index.html#rstudio",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "RStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
+  },
+  {
+    "objectID": "Blog.html",
+    "href": "Blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Lesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\n\n\n\n\nKeine Treffer"
+  },
+  {
+    "objectID": "Blog/Lesenswert/index.html",
+    "href": "Blog/Lesenswert/index.html",
+    "title": "Lesenswert",
+    "section": "",
+    "text": "Literatur\n\nBurns, Patrick. 2011. The R inferno. https://www.burns-stat.com/pages/Tutor/R_inferno.pdf.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nEllis, Andrew, und Boris Mayer. 2019. Einführung in die Programmierung mit R. https://boris.unibe.ch/96675/1/Einführung in R.pdf.\n\n\nFaraway, Julian J. 2002. Practical regression and ANOVA using R. Michigan: LSA, University of Michigan. https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf.\n\n\nKnuth, D. E. 1984. „Literate Programming“. The Computer Journal 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nLogan, Murray. 2010. Biostatistical design and analysis using R. A practical guide. Chichester: Wiley-Blackwell. http://users.monash.edu.au/~murray/BDAR.\n\n\nParadis, Emmanuel. 2005. R for beginners. Montpellier: Université Montpellier II. https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf.\n\n\nStatistikstelle. 2020. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2019“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2019.pdf.\n\n\n———. 2021. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2020“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2020.pdf.\n\n\n———. 2022. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2021“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2021.pdf.\n\n\nWickham, Hadley. 2015. R Packages. Cambridge: O’Reilly. http://r-pkgs.had.co.nz/.\n\n\nXie, Yihui, J. J. Allaire, und Garrett Grolemund. 2018. R markdown: The definitive quide. Taylor & Francis Ltd. https://bookdown.org/yihui/rmarkdown/.\n\n\nZuur, Alain F., Elena N. Ieno, und Chris S. Elphick. 2010. „A protocol for data exploration to avoid common statistical problems“. Methods in Ecology and Evolution 1 (1): 3–14. https://doi.org/10.1111/j.2041-210x.2009.00001.x."
+  },
+  {
+    "objectID": "Ressourcen.html",
+    "href": "Ressourcen.html",
+    "title": "Ressourcen",
+    "section": "",
+    "text": "Datensätze\nDie benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.\nUm diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:\n\ndownload.file(url = \"https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip\",\n    destfile = \"KursDateien.zip\", method = \"curl\")\nunzip(\"KursDateien.zip\", overwrite = TRUE)\nunlink(\"KursDateien.zip\")"
+  }
+]

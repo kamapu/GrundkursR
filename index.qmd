@@ -1,0 +1,25 @@
+---
+title: Statistiken und Graphiken mit R
+toc: false
+about:
+  template: jolla
+  id: about-block
+  links:
+    - icon: globe-europe-africa
+      text: M. Alvarez (Dozent)
+      href: https://kamapu.github.io/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/miguel-alvarez-49559b145/
+    - icon: envelope
+      text: Email
+      href: "mailto:kamapu@posteo.de"
+---
+
+### Willkommen zu diesem Einführungskurs!
+
+[R](https://cran.r-project.org/) ist eine sehr vielseitige Programmiersprache und freie Software mit besonderen Stärken in den Bereichen **Statistik** und **Datenvisualisierung**. Als eines der beliebtesten Werkzeuge für die statistische Datenanalyse ist R bei Profis und Amateuren gleichermaßen beliebt. In diesem Kurs erhalten Sie eine solide Einführung in die Grundlagen der Programmierung mit R und lernen den Umgang mit [RStudio](https://posit.co/download/rstudio-desktop/). Anhand von praktischen Übungen werden Tabellen und Grafiken erstellt.
+
+![](images/cover-picture.png){width="90%"}
+
+[![](https://img.shields.io/badge/License-CC--BY--SA-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0)

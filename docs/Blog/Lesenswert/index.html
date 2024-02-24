@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Wenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.">
 
-<title>Statistiken und Graphiken mit R</title>
+<title>Lesenswert</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//images/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,10 +82,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -77,21 +98,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Ressourcen.html" rel="" target="">
+    <a class="nav-link" href="../../Ressourcen.html" rel="" target="">
  <span class="menu-text">Ressourcen</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Termine.html" rel="" target="">
+    <a class="nav-link" href="../../Termine.html" rel="" target="">
  <span class="menu-text">Termine</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Blog.html" rel="" target="">
+    <a class="nav-link" href="../../Blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -105,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Statistiken und Graphiken mit R</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lesenswert</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -116,53 +137,107 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/R_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/R_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistiken und Graphiken mit R</h1>
-</div>
-<div class="quarto-title-meta">
+<h1 class="title">Lesenswert</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Zusatzmaterial</div>
   </div>
-</header><main class="content" id="quarto-document-content">
-<section id="willkommen-zu-diesem-einführungskurs" class="level3">
-<h3 data-anchor-id="willkommen-zu-diesem-einführungskurs">Willkommen zu diesem Einführungskurs!</h3>
-<p><a href="https://cran.r-project.org/">R</a> ist eine sehr vielseitige Programmiersprache und freie Software mit besonderen Stärken in den Bereichen <strong>Statistik</strong> und <strong>Datenvisualisierung</strong>. Als eines der beliebtesten Werkzeuge für die statistische Datenanalyse ist R bei Profis und Amateuren gleichermaßen beliebt. In diesem Kurs erhalten Sie eine solide Einführung in die Grundlagen der Programmierung mit R und lernen den Umgang mit <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>. Anhand von praktischen Übungen werden Tabellen und Grafiken erstellt.</p>
-<p><img src="images/cover-picture.png" class="img-fluid" style="width:90.0%"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://creativecommons.org/licenses/by-sa/4.0"><img src="https://img.shields.io/badge/License-CC--BY--SA-blue.svg" class="img-fluid figure-img"></a></p>
-</figure>
+  </div>
+
+<div>
+  <div class="description">
+    Wenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.
+  </div>
 </div>
 
 
-</section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://kamapu.github.io/" class="about-link" rel="" target="">
-    <i class="bi bi-globe-europe-africa"></i>
-     <span class="about-link-text">M. Alvarez (Dozent)</span>
-  </a>
-  <a href="https://www.linkedin.com/in/miguel-alvarez-49559b145/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="mailto:kamapu@posteo.de" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">23. Februar 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Geändert</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">24. Februar 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Burns2011" class="csl-entry" role="listitem">
+Burns, Patrick. 2011. <em>The <span>R</span> inferno</em>. <a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">https://www.burns-stat.com/pages/Tutor/R_inferno.pdf</a>.
 </div>
+<div id="ref-Crawley2013" class="csl-entry" role="listitem">
+Crawley, Michael J. 2013. <em>The <span>R</span> book</em>. Wiley. <a href="https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf">https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf</a>.
 </div>
- <!-- /main -->
+<div id="ref-Dormann2008" class="csl-entry" role="listitem">
+Dormann, Carsten F, und Ingolf Kühn. 2008. <em>Angewandte <span>Statistik</span> für die biologischen <span>Wissenschaften</span></em>. Bd. 2. Leipzig-Halle: UFZ. <a href="https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf">https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf</a>.
+</div>
+<div id="ref-Ellis2019" class="csl-entry" role="listitem">
+Ellis, Andrew, und Boris Mayer. 2019. <em>Einführung in die <span>Programmierung</span> mit <span>R</span></em>. <a href="https://boris.unibe.ch/96675/1/Einführung in R.pdf">https://boris.unibe.ch/96675/1/Einführung in R.pdf</a>.
+</div>
+<div id="ref-Faraway2002" class="csl-entry" role="listitem">
+Faraway, Julian J. 2002. <em>Practical regression and <span>ANOVA</span> using <span>R</span></em>. Michigan: LSA, University of Michigan. <a href="https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf">https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf</a>.
+</div>
+<div id="ref-Knuth1984" class="csl-entry" role="listitem">
+Knuth, D. E. 1984. <span>„Literate Programming“</span>. <em>The Computer Journal</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+</div>
+<div id="ref-Ligges2008" class="csl-entry" role="listitem">
+Ligges, Uwe. 2008. <em>Programmieren mit <span>R</span></em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-540-79998-6">https://doi.org/10.1007/978-3-540-79998-6</a>.
+</div>
+<div id="ref-Logan2010" class="csl-entry" role="listitem">
+Logan, Murray. 2010. <em>Biostatistical design and analysis using <span>R</span>. A practical guide</em>. Chichester: Wiley-Blackwell. <a href="http://users.monash.edu.au/~murray/BDAR">http://users.monash.edu.au/~murray/BDAR</a>.
+</div>
+<div id="ref-Paradis2005" class="csl-entry" role="listitem">
+Paradis, Emmanuel. 2005. <em>R for beginners</em>. Montpellier: Université Montpellier II. <a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a>.
+</div>
+<div id="ref-Statistikstelle2020" class="csl-entry" role="listitem">
+Statistikstelle. 2020. <span>„Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2019“</span>. Herausgegeben von Bundesstadt Bonn. <a href="https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2019.pdf">https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2019.pdf</a>.
+</div>
+<div id="ref-Statistikstelle2021" class="csl-entry" role="listitem">
+———. 2021. <span>„Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2020“</span>. Herausgegeben von Bundesstadt Bonn. <a href="https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2020.pdf">https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2020.pdf</a>.
+</div>
+<div id="ref-Statistikstelle2022" class="csl-entry" role="listitem">
+———. 2022. <span>„Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2021“</span>. Herausgegeben von Bundesstadt Bonn. <a href="https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2021.pdf">https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2021.pdf</a>.
+</div>
+<div id="ref-Wickham2015" class="csl-entry" role="listitem">
+Wickham, Hadley. 2015. <em>R Packages</em>. Cambridge: O’Reilly. <a href="http://r-pkgs.had.co.nz/">http://r-pkgs.had.co.nz/</a>.
+</div>
+<div id="ref-Xie2018" class="csl-entry" role="listitem">
+Xie, Yihui, J. J. Allaire, und Garrett Grolemund. 2018. <em>R markdown: The definitive quide</em>. Taylor &amp; Francis Ltd. <a href="https://bookdown.org/yihui/rmarkdown/">https://bookdown.org/yihui/rmarkdown/</a>.
+</div>
+<div id="ref-Zuur2010" class="csl-entry" role="listitem">
+Zuur, Alain F., Elena N. Ieno, und Chris S. Elphick. 2010. <span>„A protocol for data exploration to avoid common statistical problems“</span>. <em>Methods in Ecology and Evolution</em> 1 (1): 3–14. <a href="https://doi.org/10.1111/j.2041-210x.2009.00001.x">https://doi.org/10.1111/j.2041-210x.2009.00001.x</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -183,6 +258,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

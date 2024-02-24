@@ -1,0 +1,30 @@
+---
+title: Lesenswert
+date: '2024-02-23'
+date-modified: '`r Sys.Date()`'
+image: logo-books.png
+categories:
+  - Zusatzmaterial
+description:
+  Wenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.
+bibliography: biblioreferences.bib
+cls: https://www.zotero.org/styles/vegetation-classification-and-survey.cls
+nocite: |
+  @*
+draft: false
+---
+
+```{r}
+#| echo: false
+library(readODS)
+library(biblio)
+
+# Reference list
+Refs <- read_ods("bib_references.ods")
+
+Bib <- read_bib("../../../../db-dumps/literatur_db/bib/MiguelReferences.bib")
+Bib <- subset(Bib, bibtexkey %in% Refs$bibtexkey)
+
+write_bib(Bib, "biblioreferences.bib")
+```
+

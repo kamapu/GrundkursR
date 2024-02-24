@@ -1,0 +1,66 @@
+---
+title: Termine
+---
+
+
+# Termine 1 und 2
+
+*27. und 29. Februar 2024*
+
+Einstieg in das Syntax und die Datentypen in **R**, inklusive eine Einführung in
+die Nutzung von **RStudio**.
+
+<!--
+
+[Folien](documents/FolienRKurs-12.pdf)
+
+[Skript Tag 1](documents/Tag1.R)
+[Skript Tag 2](documents/Tag2.R)
+
+# Termine 3 und 4
+
+*05. und 07. März 2024*
+
+Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätzen
+(Klasse `data.frame`), sowie das Schreiben und Lesen von Dateien.
+
+[Folien](documents/FolienRKurs-34.pdf)
+
+[Skript Tag 3](documents/Tag3.R)
+
+[Skript Tag 4](documents/Tag4.R)
+
+# Termine 5 und 6
+
+*12. und 14. März 2024*
+
+Statistische Auswertungen von Datensätzen (Klasse `data.frame`) und
+Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für
+Datenverwaltung diskutiert.
+
+[Folien](documents/FolienRKurs-56.pdf)
+
+[Skript Tag 5](documents/Tag5.R)
+[Skript Tag 6](documents/Tag6.R)
+
+# Termine 7 und 8
+
+*19. und 21. März 2024*
+
+Zweite Runde mit Plots, diesmal handeln wir Funktionen vom Paket `ggplot2`.
+Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode.
+Nach der letzten Sitzung bist du kein Anfänger mehr.
+
+[Folien](documents/FolienRKurs-78.pdf)
+
+[Skript Tag 7](documents/Tag7.R)
+
+[Skript Tag 8](documents/Tag8.R)
+
+[Notizbuch mit Rmarkdown](documents/meinNotebook.Rmd)
+
+[Quellcode für Tag 7](documents/MeineFunktionen.R)
+
+[Dokument als Rmarkdown](documents/Statistik.Rmd)
+
+-->
