@@ -1,6 +1,7 @@
 ---
 title: Erforderliche Software und Pakete
 date: '2024-02-23'
+author: Miguel Alvarez
 date-modified: '`r Sys.Date()`'
 image: logo-software.png
 categories:

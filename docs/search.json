@@ -39,7 +39,7 @@
     "href": "Blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Lesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Schummelzettel\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nHier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.\n\n\n\n\n\n\n24.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nLesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\nKeine Treffer"
   },
   {
     "objectID": "Blog/Lesenswert/index.html",
@@ -54,5 +54,19 @@
     "title": "Ressourcen",
     "section": "",
     "text": "Datensätze\nDie benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.\nUm diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:\n\ndownload.file(url = \"https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip\",\n    destfile = \"KursDateien.zip\", method = \"curl\")\nunzip(\"KursDateien.zip\", overwrite = TRUE)\nunlink(\"KursDateien.zip\")"
+  },
+  {
+    "objectID": "Blog/Schummelzettel/indes.html",
+    "href": "Blog/Schummelzettel/indes.html",
+    "title": "Schummelzettel",
+    "section": "",
+    "text": "Wenn man gerade die Arbeit mit R lernt oder in neuen Anwendungen eingeführt wird, verschaffen Schummelzettel eine gute Überblick der wichtigten Funktionen oder Argumenten. Hier ist eine Liste von solchen Zetteln, die man in Internet finden kann.\n\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet\nknitr Reference Card\nR Markdown Cheat Sheet\nInteraktives Markdown Tutorial\nCode Chunk Options for knitr and Rmarkdown\nThe Carpentries Glosario"
+  },
+  {
+    "objectID": "Blog/Schummelzettel/index.html",
+    "href": "Blog/Schummelzettel/index.html",
+    "title": "Schummelzettel",
+    "section": "",
+    "text": "Wenn man die Arbeit mit R lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente. Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.\n\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet\nknitr Reference Card\nR Markdown Cheat Sheet\nInteraktives Markdown Tutorial\nCode Chunk Options for knitr and Rmarkdown\nThe Carpentries Glosario"
   }
 ]

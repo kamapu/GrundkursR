@@ -1,0 +1,31 @@
+---
+title: Schummelzettel
+date: '2024-02-24'
+author: Miguel Alvarez
+date-modified: '`r Sys.Date()`'
+image: tidyr.png
+categories:
+  - Zusatzmaterial
+description:
+  Hier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.
+draft: false
+---
+
+Wenn man die Arbeit mit **R** lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente.
+Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.
+
+- [Short's R Reference
+  Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+- [The R Graph Gallery](https://r-graph-gallery.com/)
+- [R Color
+  Chart](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)
+- [Data tidying with `tidyr` Cheat
+  Sheet](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
+- [`knitr` Reference
+  Card](https://cran.r-project.org/web/packages/knitr/vignettes/knitr-refcard.pdf)
+- [R Markdown Cheat
+  Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [Interaktives Markdown Tutorial](https://www.markdowntutorial.com/)
+- [Code Chunk Options for knitr and Rmarkdown](https://yihui.org/knitr/options/)
+- [The Carpentries Glosario](https://glosario.carpentries.org/)
+  
