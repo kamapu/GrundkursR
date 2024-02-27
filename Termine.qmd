@@ -10,6 +10,8 @@ title: Termine
 Einstieg in das Syntax und die Datentypen in **R**, inklusive eine Einführung in
 die Nutzung von **RStudio**.
 
+[Foliensatz Termin 1](Dateien/FolienRKurs-1.pdf)
+
 <!--
 
 [Folien](documents/FolienRKurs-12.pdf)
