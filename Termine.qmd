@@ -12,11 +12,9 @@ die Nutzung von **RStudio**.
 
 [Foliensatz Termin 1](Dateien/FolienRKurs-1.pdf)
 
+[Skript Tag 1](Dateien/Tag1.R)
+
 <!--
-
-[Folien](documents/FolienRKurs-12.pdf)
-
-[Skript Tag 1](documents/Tag1.R)
 [Skript Tag 2](documents/Tag2.R)
 
 # Termine 3 und 4
