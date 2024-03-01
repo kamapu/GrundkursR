@@ -13,9 +13,8 @@ die Nutzung von **RStudio**.
 - [Foliensatz Termin 1](Dateien/FolienRKurs-1.pdf)
 - [Foliensatz Termin 2](Dateien/FolienRKurs-2.pdf)
 - [Skript Tag 1](Dateien/Tag1.R)
+- [Skript Tag 2](Dateien/Tag2.R)
 
-<!--
-[Skript Tag 2](documents/Tag2.R)
 
 # Termine 3 und 4
 
@@ -23,6 +22,9 @@ die Nutzung von **RStudio**.
 
 Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätzen
 (Klasse `data.frame`), sowie das Schreiben und Lesen von Dateien.
+
+
+<!--
 
 [Folien](documents/FolienRKurs-34.pdf)
 
