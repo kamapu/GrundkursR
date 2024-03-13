@@ -56,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -170,7 +189,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#test-auf-normalverteilung" id="toc-test-auf-normalverteilung" class="nav-link" data-scroll-target="#test-auf-normalverteilung">Test auf Normalverteilung</a></li>
   <li><a href="#tests-auf-homoskedastizität" id="toc-tests-auf-homoskedastizität" class="nav-link" data-scroll-target="#tests-auf-homoskedastizität">Tests auf Homoskedastizität</a></li>
+  <li><a href="#umwandlung-von-daten" id="toc-umwandlung-von-daten" class="nav-link" data-scroll-target="#umwandlung-von-daten">Umwandlung von Daten</a></li>
+  <li><a href="#anova-richtig-gemacht" id="toc-anova-richtig-gemacht" class="nav-link" data-scroll-target="#anova-richtig-gemacht">ANOVA richtig gemacht</a></li>
   </ul></li>
+  <li><a href="#post-hoc-kontrast" id="toc-post-hoc-kontrast" class="nav-link" data-scroll-target="#post-hoc-kontrast">Post-hoc Kontrast</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   <li><a href="#referenzen" id="toc-referenzen" class="nav-link" data-scroll-target="#referenzen">Referenzen</a></li>
   </ul>
 </nav>
@@ -212,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Geändert</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">12. März 2024</p>
+      <p class="date-modified">13. März 2024</p>
     </div>
   </div>
     
@@ -236,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Der Datensatz <strong>Boden</strong> enthält Beobachtungen von 36 Untersuchungsfeldern in vier Orten (zwei Orte in Kenia und zwei Orte in Tansania). Die Untersuchungsfelder sind in drei Landnutzungen unterteilt, nämlich “ungenutzte Flächen” (halbnatürliche Vegetation), “Weideland” und “Brachland” (lang- und kurzfristig aufgegebene Ackerflächen).</p>
 <p><img src="LandUses.png" class="img-fluid"></p>
-<p>Zusätzlich zur Zugehörigkeit zu Land, Ort und Landnutzung enthält <strong>Boden</strong> die bodenchemischen Variablen für jede Fläche, nämlich den Gehalt an organischem Kohlenstoffgehalt (g kg<sup>-1</sup>), Gesamtstickstoffgehalt (g kg<sup>-1</sup>), pflanzenverfügbarer Phosphor (mg kg<sup>-1</sup>), austauschbares Kalium (cmol kg<sup>-1</sup>), elektrische Leitfähigkeit (dS m<sup>-1</sup>) und pH-Wert <span class="citation" data-cites="Kamiri2010">[@Kamiri2010]</span>.</p>
+<p>Zusätzlich zur Zugehörigkeit zu Land, Ort und Landnutzung enthält <strong>Boden</strong> die bodenchemischen Variablen für jede Fläche, nämlich den Gehalt an organischem Kohlenstoffgehalt (g kg<sup>-1</sup>), Gesamtstickstoffgehalt (g kg<sup>-1</sup>), pflanzenverfügbarer Phosphor (mg kg<sup>-1</sup>), austauschbares Kalium (cmol kg<sup>-1</sup>), elektrische Leitfähigkeit (dS m<sup>-1</sup>) und pH-Wert <span class="citation" data-cites="Kamiri2010">(<a href="#ref-Kamiri2010" role="doc-biblioref">Kamiri 2010</a>)</span>.</p>
 </section>
 <section id="varianzanalyse" class="level1">
 <h1>Varianzanalyse</h1>
@@ -275,7 +299,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EC.Tanzania, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(EC.Tanzania), <span class="at">sd =</span> <span class="fu">sd</span>(EC.Tanzania)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Um die Sache zu vereinfachen, können wir alternativ die Verteilung der Residuen in den Modellen überprüfen. Hier werden wir eine zusätzliche grafische Option verwenden, die die Abweichung der beobachteten Verteilung von einer theoretischen Normalverteilung, nämlich den normalen Quantil-Quantil-Plot (Q-Q-Plot).</p>
@@ -291,11 +315,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(Residuals, <span class="at">asp =</span> <span class="dv">1</span>)</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(Residuals, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Was ist Ihre Meinung? Ist die Verteilung der Residuen eine Normalverteilung? Während einige Autoren eine visuelle Beurteilung als ehrliche Alternative empfehlen, um zu entscheiden, ob die Verteilung als normal anzusehen ist oder nicht, raten andere Autoren, dass eine visuelle Beurteilung einen Test nicht ersetzen kann.</p>
-<p>Um die Normalverteilung von Werten zu überprüfen, haben wir unter anderem zwei Alternativen, den Kolmogorov-Smirnov-Test (Funktion <code>ks.test()</code>) und den Shapiro-Wilk Test (Funktion <code>shapiro.test()</code>). In dieser Sitzung werden wir die zweite Option <span class="citation" data-cites="Dormann2011">[für Anwendungen von `ks.test()`, siehe @Dormann2011]</span>.</p>
+<p>Um die Normalverteilung von Werten zu überprüfen, haben wir unter anderem zwei Alternativen, den Kolmogorov-Smirnov-Test (Funktion <code>ks.test()</code>) und den Shapiro-Wilk Test (Funktion <code>shapiro.test()</code>). In dieser Sitzung werden wir die zweite Option <span class="citation" data-cites="Dormann2008">(für Anwendungen von <code>ks.test()</code>, siehe <a href="#ref-Dormann2008" role="doc-biblioref">Dormann und Kühn 2008</a>)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(Residuals)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -314,18 +338,258 @@ W = 0.90258, p-value = 0.004017</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(EC <span class="sc">~</span> Country, <span class="at">data =</span> Boden, <span class="at">col =</span> <span class="st">"grey"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Offensichtlich ist die Varianz in den tansanischen Stichproben viel höher als die Varianz für die kenianischen Stichproben. Damit haben wir zwar auch mehr als eine Alternative für statistische Tests, aber wir werden nur den Bartlett-Test anwenden (Funktion <code>bartlett.test()</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(EC <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  EC by Country
+Bartlett's K-squared = 34.712, df = 1, p-value = 3.823e-09</code></pre>
+</div>
+</div>
+<p>Unsere Nullhypothese lautete also: <em>H<sub>0</sub>: “die Varianzen der Bodenelektrizitätskonstante im Ländervergleich sind homogen”</em>. Nochmals deutet hier ein P-Wert von weniger als 5% auf einen signifikanten Unterschied zwischen Varianzen an.</p>
+<p>Zusammenfassend lässt sich sagen, dass die Variable Leitfähigkeit nicht die Anforderungen an einen parametrischen Test und die Ergebnisse der ersten ANOVA sind nicht gültig. Was ist nun zu tun?</p>
+</section>
+<section id="umwandlung-von-daten" class="level2">
+<h2 class="anchored" data-anchor-id="umwandlung-von-daten">Umwandlung von Daten</h2>
+<p>Es ist nicht alles verloren. Die Rettung kann die Daten Transformation. Die gängigsten Methoden sind relativ einfach (siehe Tabelle). Solche Transformationen ändern nicht nur die Skala der Variablen, sondern sie verändern auch die Verteilung der Werte. Numerische Variablen werden häufig mit Hilfe der logarithmischen, reziproken und Quadratwurzel-Transformationen. Die Arkansinus-Quadratwurzel-Transformation wird verwendet, um Prozentsätze und Proportionen zu transformieren.</p>
+<p><em><strong>Tabelle hier</strong></em></p>
+<p>Wenn die genannten Transformationen nicht erfolgreich waren, bleibt die Alternative einer einer Box-Cox-Transformation. Hierfür steht die Funktion <code>boxcox()</code> im dem Paket <a href="https://CRAN.R-project.org/package=MASS"><code>MASS</code></a> zur Verfügung.</p>
+<p>Einige Spezialfälle sind die Dummy-Transformation, die für die Analyse von nominalen Variablen angewandt wird, und die Standardisierung, die vor allem in der multivariaten Statistik benötigt wird.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Logarithmus-Transformation</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ec.log <span class="ot">&lt;-</span> <span class="fu">log</span>(Boden<span class="sc">$</span>EC, <span class="at">base =</span> <span class="fu">exp</span>(<span class="dv">1</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Kehrwert-Transformation</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>ec.rec <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>Boden<span class="sc">$</span>EC</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratwurzel-Transformation</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>ec.root <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(Boden<span class="sc">$</span>EC)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Schauen wir uns die Auswirkungen der vorherigen Datentransformationen auf die Verteilung der Werte.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Boden<span class="sc">$</span>EC, <span class="at">col=</span><span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"original data"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ec.log, <span class="at">col=</span><span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"logarithmic transformation"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ec.rec, <span class="at">col=</span><span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"reciprocal transformation"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ec.root, <span class="at">col=</span><span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"squared root transformation"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Wir testen zunächst die Normalität der Residuen und die Homoskedastizität der Varianzen bei der logarithmischen Transformation der elektrischen Leitfähigkeit des Bodens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test to normality</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">resid</span>(<span class="fu">aov</span>(ec.log <span class="sc">~</span> Country, <span class="at">data =</span> Boden)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  resid(aov(ec.log ~ Country, data = Boden))
+W = 0.9831, p-value = 0.8442</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test to homoscedasticity</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(ec.log <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  ec.log by Country
+Bartlett's K-squared = 0.52083, df = 1, p-value = 0.4705</code></pre>
+</div>
+</div>
+<p>Hier erhalten wir für die logarithmische Transformation der Leitfähigkeit des Bodens sowohl im Shapiro-Wilk-Test als auch im Bartlett-Test P-Werte größer als 0,05. Das heißt, die Residuen sind normalverteilt und die Varianzen sind homogen. Aber was ist mit den anderen Transformationsalternativen?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tests for reciprocal transformation</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">resid</span>(<span class="fu">aov</span>(ec.rec <span class="sc">~</span> Country, <span class="at">data =</span> Boden)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  resid(aov(ec.rec ~ Country, data = Boden))
+W = 0.93684, p-value = 0.04055</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(ec.rec <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  ec.rec by Country
+Bartlett's K-squared = 22.503, df = 1, p-value = 2.098e-06</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tests for squared root transformation</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">resid</span>(<span class="fu">aov</span>(ec.root <span class="sc">~</span> Country, <span class="at">data =</span> Boden)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  resid(aov(ec.root ~ Country, data = Boden))
+W = 0.94361, p-value = 0.06584</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(ec.root <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  ec.root by Country
+Bartlett's K-squared = 12.733, df = 1, p-value = 0.0003592</code></pre>
+</div>
+</div>
+<p>Für die Kehrwert-Transformation ist keine der Anforderungen erfüllt (unter Berücksichtigung desselben Signifikanzintervalls von 95%), während bei der quadratischen Wurzeltransformation nur die Normalität der Residuen erreicht werden kann. Daraus folgt, ist die logarithmische Transformation die einzige, die die Daten für einen parametrischen Test. Wir können die ursprünglichen und die transformierten Daten in den folgenden Grafiken.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculation of residuals for logarithmic transformation</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Resid.log <span class="ot">&lt;-</span> <span class="fu">resid</span>(<span class="fu">aov</span>(ec.log <span class="sc">~</span> Country, <span class="at">data =</span> Boden))</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting distributions</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">las =</span> <span class="dv">1</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Residuals, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"residuals from original data"</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(Residuals), <span class="at">sd =</span> <span class="fu">sd</span>(Residuals)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(EC <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Resid.log, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="st">"grey"</span>, <span class="at">main =</span> <span class="st">"logarithmic transformation"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(Resid.log), <span class="at">sd =</span> <span class="fu">sd</span>(Resid.log)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ec.log <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Nach der Logarithmus-Transformation scheint das Histogramm besser an eine theoretische Normalverteilung angepasst und die Boxplots sind in ihren Amplituden ähnlich.</p>
+</section>
+<section id="anova-richtig-gemacht" class="level2">
+<h2 class="anchored" data-anchor-id="anova-richtig-gemacht">ANOVA richtig gemacht</h2>
+<p>Sobald wir eine geeignete Transformation der Daten gefunden haben, können wir die ANOVA durchführen und korrekte Ergebnisse sicherstellen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(ec.log <span class="sc">~</span> LandUse, <span class="at">data =</span> Boden)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+LandUse      2   0.19  0.0975   0.057  0.944
+Residuals   33  56.03  1.6978               </code></pre>
+</div>
+</div>
+<p>Nach der Transformation gibt es immer noch einen hochsignifikanten Unterschied zwischen Ländern in der elektrischen Leitfähigkeit des Bodens. Und wir können es veröffentlichen.</p>
+</section>
+</section>
+<section id="post-hoc-kontrast" class="level1">
+<h1>Post-hoc Kontrast</h1>
+<p>Bevor ich den parametrischen Test beende, möchte ich noch einige Ratschläge geben bezüglich ANOVA. Im Beispiel haben wir die ANOVA auf einen Faktor mit nur zwei Stufen (Kenia und Tansania). In einem solchen Fall kann die Verwendung eines gepaarten t-Tests mit zwei Stichproben ausreichend sein (Funktion <code>pairwise.t.test()</code>). Wir können die einseitige ANOVA stattdessen auf Faktoren mit mehr als zwei Stufen anwenden, z. B. zum Vergleich der Bodenreaktion an verschiedenen Orten.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(pH <span class="sc">~</span> Locality, <span class="at">data =</span> Boden)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+Locality     3  17.17   5.724   14.15 4.82e-06 ***
+Residuals   32  12.94   0.404                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>In anderen Fällen kann es erforderlich sein, eine neue erklärende (unabhängige) Variable hinzuzufügen, zum Beispiel die Art der Landnutzung.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(pH <span class="sc">~</span> Locality <span class="sc">+</span> LandUse, <span class="at">data =</span> Boden)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value  Pr(&gt;F)    
+Locality     3 17.172   5.724  14.410 5.4e-06 ***
+LandUse      2  1.024   0.512   1.289    0.29    
+Residuals   30 11.916   0.397                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Oder noch mehr, wir müssen vielleicht auch die Interaktion zwischen den Faktoren kennen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(pH <span class="sc">~</span> Locality <span class="sc">*</span> LandUse, <span class="at">data =</span> Boden)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+Locality          3 17.172   5.724  14.865 1.12e-05 ***
+LandUse           2  1.024   0.512   1.329    0.283    
+Locality:LandUse  6  2.675   0.446   1.158    0.361    
+Residuals        24  9.242   0.385                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Wir kehren zum ersten Beispiel zurück und testen die Auswirkung des Standorts auf die Bodenreaktion (gemessen als pH-Wert). Natürlich können Sie vorher die Normalität der Normalität der Residuen und die Homoskedastizität der Varianzen prüfen, aber dies ist nur ein Beispiel. Hier sagt uns die ANOVA “es gibt einen Unterschied in der Bodenreaktion in Abhängigkeit vom Ort der Probenahme”, aber wir wissen nicht, an welchen Orten sich die Boden-pH-Werte von denen der anderen unterscheiden. Um das zu wissen, benötigen wir eine <em>post-hoc</em>-Kontrast. In dieser Sitzung werden wir den Tukey’s honest signifikanten Unterschied (Funktion <code>TukeyHSD()</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(pH <span class="sc">~</span> Locality, <span class="at">data =</span> Boden)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+Locality     3  17.17   5.724   14.15 4.82e-06 ***
+Residuals   32  12.94   0.404                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Tukey <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(ANOVA)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>Tukey</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = pH ~ Locality, data = Boden)
+
+$Locality
+                       diff       lwr         upr     p adj
+Malinda-Lukozi   -0.7833333 -1.595514  0.02884776 0.0619263
+Rumuruti-Lukozi  -1.3722222 -2.184403 -0.56004113 0.0003764
+Tegu-Lukozi      -1.8500000 -2.662181 -1.03781891 0.0000038
+Rumuruti-Malinda -0.5888889 -1.401070  0.22329220 0.2225102
+Tegu-Malinda     -1.0666667 -1.878848 -0.25448558 0.0062137
+Tegu-Rumuruti    -0.4777778 -1.289959  0.33440331 0.3963421</code></pre>
+</div>
+</div>
+<p>In der Ausgabe von <code>TukeyHSD()</code> können Sie die paarweisen Vergleiche suchen bei denen sowohl die obere als auch die untere Grenze der Differenz entweder negativ oder positiv sind. Wenn die genannten Werte unterschiedliche Symbole haben, ist der Unterschied nicht signifikant. Dies kann auch in der Spalte mit den P-Werten überprüft werden (<code>p adj</code>). Es gibt auch eine grafische Option zur Anzeige der Ergebnisse von <code>TukeyHSD()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotten der Tukey-Ausgabe</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las =</span> <span class="dv">1</span>, <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">1</span>))</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Tukey)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
+<section id="disclaimer" class="level1">
+<h1>Disclaimer</h1>
+<p>Dieses Handout ist eine vorläufige Version, die von einem Nicht-Statistiker erstellt wurde, daher ist die Verwendung vorsichtig und auf eigenes Risiko. Da dieser Text für weitere R-Kurse verbessert werden soll R-Kursen verbessert werden soll, ist jeder Kommentar, jede Korrektur und jeder Vorschlag höchst willkommen (senden Sie diese an <a href="mailto:kamapu@posteo.de" class="email">kamapu@posteo.de</a>).</p>
+<p>Der Inhalt dieses Handouts basiert auf deutschen Referenzen <span class="citation" data-cites="Ligges2008 Kohler2002 Dormann2008">(<a href="#ref-Ligges2008" role="doc-biblioref">Ligges 2008</a>; <a href="#ref-Kohler2002" role="doc-biblioref"><strong>Kohler2002?</strong></a>; <a href="#ref-Dormann2008" role="doc-biblioref">Dormann und Kühn 2008</a>)</span>.</p>
+<p>Einige englische Referenzen können <span class="citation" data-cites="Zar2009">(<a href="#ref-Zar2009" role="doc-biblioref"><strong>Zar2009?</strong></a>)</span> und die Tutorials von <span class="citation" data-cites="King2014">(<a href="#ref-King2014" role="doc-biblioref"><strong>King2014?</strong></a>)</span>, <span class="citation" data-cites="Schumacher2007">(<a href="#ref-Schumacher2007" role="doc-biblioref"><strong>Schumacher2007?</strong></a>)</span> und <span class="citation" data-cites="Everitt2005">(<a href="#ref-Everitt2005" role="doc-biblioref"><strong>Everitt2005?</strong></a>)</span>.</p>
+</section>
+<section id="übungen" class="level1">
+<h1>Übungen</h1>
+<ul>
+<li>Sie fragen: “Gibt es einen Unterschied im pH-Wert des Bodens zwischen den Unterschiede zwischen den Probenahmestandorten?”, aber diesmal überprüfen Sie zuerst die Normalverteilung der Residuen und die Homogenität der Varianzen zwischen den Orten.</li>
+<li>Gibt es Unterschiede zwischen den angewandten Insektiziden in der Menge der Insekten (Überlebende) in den Versuchsparzellen gefunden? Verwenden Sie den Datensatz <code>InsectSprays</code>.</li>
+<li>Wenden Sie eine faktorielle ANOVA auf den Datensatz <code>ToothGrowth</code> an.</li>
+<li>Versuchen Sie nun das Gleiche mit Ihrem eigenen Datensatz.</li>
+</ul>
 </section>
 <section id="referenzen" class="level1">
-<h1>Referenzen</h1>
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Referenzen</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Dormann2008" class="csl-entry" role="listitem">
+Dormann, Carsten F, und Ingolf Kühn. 2008. <em>Angewandte <span>Statistik</span> für die biologischen <span>Wissenschaften</span></em>. Bd. 2. Leipzig-Halle: UFZ. <a href="https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf">https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf</a>.
+</div>
+<div id="ref-Kamiri2010" class="csl-entry" role="listitem">
+Kamiri, Hellen Wangechi. 2010. <em>Effects of land use dynamics on attributes of wetland soils in Africa</em>. Bonn: INRES.
+</div>
+<div id="ref-Ligges2008" class="csl-entry" role="listitem">
+Ligges, Uwe. 2008. <em>Programmieren mit <span>R</span></em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-540-79998-6">https://doi.org/10.1007/978-3-540-79998-6</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

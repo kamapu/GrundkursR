@@ -8,10 +8,21 @@ categories:
   - Übung
 description:
   Ein Workflow für die parametrische Statistik und das Testen von Hypothesen unter der Annahme der Normalverteilung.
-#bibliography: biblioreferences.bib
-#cls: https://www.zotero.org/styles/vegetation-classification-and-survey.cls
+bibliography: biblioreferences.bib
+cls: https://www.zotero.org/styles/vegetation-classification-and-survey.cls
+link-citations: true
 draft: true
 ---
+
+```{r}
+#| echo: false
+library(biblio)
+Bib <- read_bib("MiguelReferences.bib")
+Keys <- detect_keys("index.qmd")$bibtexkey
+Bib <- subset(Bib, bibtexkey %in% Keys)
+write_bib(Bib, "biblioreferences.bib")
+```
+
 
 # Einführung
 
@@ -108,7 +119,7 @@ Was ist Ihre Meinung?
 Ist die Verteilung der Residuen eine Normalverteilung? Während einige Autoren eine visuelle Beurteilung als ehrliche Alternative empfehlen, um zu entscheiden, ob die Verteilung als normal anzusehen ist oder nicht, raten andere Autoren, dass eine visuelle Beurteilung einen Test nicht ersetzen kann.
 
 Um die Normalverteilung von Werten zu überprüfen, haben wir unter anderem zwei Alternativen, den Kolmogorov-Smirnov-Test (Funktion `ks.test()`) und den Shapiro-Wilk Test (Funktion `shapiro.test()`).
-In dieser Sitzung werden wir die zweite Option [für Anwendungen von `ks.test()`, siehe @Dormann2011].
+In dieser Sitzung werden wir die zweite Option [für Anwendungen von `ks.test()`, siehe @Dormann2008].
 
 ```{r}
 shapiro.test(Residuals)
@@ -126,6 +137,183 @@ Wie im vorherigen Beispiel werden wir suchen wir zunächst nach einer grafischen
 boxplot(EC ~ Country, data = Boden, col = "grey")
 ```
 
+Offensichtlich ist die Varianz in den tansanischen Stichproben viel höher als die Varianz für die kenianischen Stichproben.
+Damit haben wir zwar auch mehr als eine Alternative für statistische Tests, aber wir werden nur den Bartlett-Test anwenden (Funktion `bartlett.test()`).
+
+```{r}
+bartlett.test(EC ~ Country, data = Boden)
+```
+
+Unsere Nullhypothese lautete also: *H~0~: "die Varianzen der Bodenelektrizitätskonstante im Ländervergleich sind homogen"*.
+Nochmals deutet hier ein P-Wert von weniger als 5% auf einen signifikanten Unterschied zwischen Varianzen an.
+
+Zusammenfassend lässt sich sagen, dass die Variable Leitfähigkeit nicht die Anforderungen an einen parametrischen Test und die Ergebnisse der ersten ANOVA sind nicht gültig.
+Was ist nun zu tun?
+
+## Umwandlung von Daten
+
+
+Es ist nicht alles verloren.
+Die Rettung kann die Daten Transformation.
+Die gängigsten Methoden sind relativ einfach (siehe Tabelle).
+Solche Transformationen ändern nicht nur die Skala der Variablen, sondern sie verändern auch die Verteilung der Werte.
+Numerische Variablen werden häufig mit Hilfe der logarithmischen, reziproken und Quadratwurzel-Transformationen.
+Die Arkansinus-Quadratwurzel-Transformation wird verwendet, um Prozentsätze und Proportionen zu transformieren.
+
+*__Tabelle hier__*
+
+Wenn die genannten Transformationen nicht erfolgreich waren, bleibt die Alternative einer einer Box-Cox-Transformation.
+Hierfür steht die Funktion `boxcox()` im dem Paket [`MASS`]( https://CRAN.R-project.org/package=MASS ) zur Verfügung.
+
+Einige Spezialfälle sind die Dummy-Transformation, die für die Analyse von nominalen Variablen angewandt wird, und die Standardisierung, die vor allem in der multivariaten Statistik benötigt wird.
+
+```{r}
+# Logarithmus-Transformation
+ec.log <- log(Boden$EC, base = exp(1))
+
+# Kehrwert-Transformation
+ec.rec <- 1/Boden$EC
+
+# Quadratwurzel-Transformation
+ec.root <- sqrt(Boden$EC)
+```
+
+Schauen wir uns die Auswirkungen der vorherigen Datentransformationen auf die Verteilung der Werte.
+
+```{r}
+par(mfrow=c(2,2), las=1)
+
+hist(Boden$EC, col="grey", main = "original data")
+hist(ec.log, col="grey", main = "logarithmic transformation")
+hist(ec.rec, col="grey", main = "reciprocal transformation")
+hist(ec.root, col="grey", main = "squared root transformation")
+```
+
+Wir testen zunächst die Normalität der Residuen und die Homoskedastizität der Varianzen bei der logarithmischen Transformation der elektrischen Leitfähigkeit des Bodens.
+
+```{r}
+# Test to normality
+shapiro.test(resid(aov(ec.log ~ Country, data = Boden)))
+# Test to homoscedasticity
+bartlett.test(ec.log ~ Country, data = Boden)
+```
+
+Hier erhalten wir für die logarithmische Transformation der Leitfähigkeit des Bodens sowohl im Shapiro-Wilk-Test als auch im Bartlett-Test P-Werte größer als 0,05.
+Das heißt, die Residuen sind normalverteilt und die Varianzen sind homogen.
+Aber was ist mit den anderen Transformationsalternativen?
+
+```{r}
+# Tests for reciprocal transformation
+shapiro.test(resid(aov(ec.rec ~ Country, data = Boden)))
+bartlett.test(ec.rec ~ Country, data = Boden)
+
+# Tests for squared root transformation
+shapiro.test(resid(aov(ec.root ~ Country, data = Boden)))
+bartlett.test(ec.root ~ Country, data = Boden)
+```
+
+Für die Kehrwert-Transformation ist keine der Anforderungen erfüllt (unter Berücksichtigung desselben Signifikanzintervalls von 95%), während bei der quadratischen Wurzeltransformation nur die Normalität der Residuen erreicht werden kann.
+Daraus folgt, ist die logarithmische Transformation die einzige, die die Daten für einen parametrischen Test.
+Wir können die ursprünglichen und die transformierten Daten in den folgenden Grafiken.
+
+```{r}
+# Calculation of residuals for logarithmic transformation
+Resid.log <- resid(aov(ec.log ~ Country, data = Boden))
+
+# Plotting distributions
+par(mfrow = c(2, 2), las = 1)
+
+hist(Residuals, freq = FALSE, col = "grey", main = "residuals from original data")
+curve(dnorm(x, mean = mean(Residuals), sd = sd(Residuals)), col = "red", add = TRUE)
+boxplot(EC ~ Country, data = Boden)
+
+hist(Resid.log, freq = FALSE, col = "grey", main = "logarithmic transformation")
+curve(dnorm(x, mean = mean(Resid.log), sd = sd(Resid.log)), col = "red", add = TRUE)
+boxplot(ec.log ~ Country, data = Boden)
+```
+
+Nach der Logarithmus-Transformation scheint das Histogramm besser an eine theoretische Normalverteilung angepasst und die Boxplots sind in ihren Amplituden ähnlich.
+
+## ANOVA richtig gemacht
+
+Sobald wir eine geeignete Transformation der Daten gefunden haben, können wir die ANOVA durchführen und korrekte Ergebnisse sicherstellen.
+
+```{r}
+ANOVA <- aov(ec.log ~ LandUse, data = Boden)
+summary(ANOVA)
+```
+
+Nach der Transformation gibt es immer noch einen hochsignifikanten Unterschied zwischen Ländern in der elektrischen Leitfähigkeit des Bodens.
+Und wir können es veröffentlichen.
+
+
+# Post-hoc Kontrast
+
+Bevor ich den parametrischen Test beende, möchte ich noch einige Ratschläge geben bezüglich ANOVA.
+Im Beispiel haben wir die ANOVA auf einen Faktor mit nur zwei Stufen (Kenia und Tansania).
+In einem solchen Fall kann die Verwendung eines gepaarten t-Tests mit zwei Stichproben ausreichend sein (Funktion `pairwise.t.test()`).
+Wir können die einseitige ANOVA stattdessen auf Faktoren mit mehr als zwei Stufen anwenden, z. B. zum Vergleich der Bodenreaktion an verschiedenen Orten.
+
+```{r}
+ANOVA <- aov(pH ~ Locality, data = Boden)
+summary(ANOVA)
+```
+
+In anderen Fällen kann es erforderlich sein, eine neue erklärende (unabhängige) Variable hinzuzufügen, zum Beispiel die Art der Landnutzung.
+
+```{r}
+ANOVA <- aov(pH ~ Locality + LandUse, data = Boden)
+summary(ANOVA)
+```
+
+Oder noch mehr, wir müssen vielleicht auch die Interaktion zwischen den Faktoren kennen.
+
+```{r}
+ANOVA <- aov(pH ~ Locality * LandUse, data = Boden)
+summary(ANOVA)
+```
+
+Wir kehren zum ersten Beispiel zurück und testen die Auswirkung des Standorts auf die Bodenreaktion (gemessen als pH-Wert).
+Natürlich können Sie vorher die Normalität der Normalität der Residuen und die Homoskedastizität der Varianzen prüfen, aber dies ist nur ein Beispiel.
+Hier sagt uns die ANOVA "es gibt einen Unterschied in der Bodenreaktion in Abhängigkeit vom Ort der Probenahme", aber wir wissen nicht, an welchen Orten sich die Boden-pH-Werte von denen der anderen unterscheiden.
+Um das zu wissen, benötigen wir eine *post-hoc*-Kontrast. In dieser Sitzung werden wir den Tukey's honest
+signifikanten Unterschied (Funktion `TukeyHSD()`).
+
+```{r}
+ANOVA <- aov(pH ~ Locality, data = Boden)
+summary(ANOVA)
+
+Tukey <- TukeyHSD(ANOVA)
+Tukey
+```
+
+In der Ausgabe von `TukeyHSD()` können Sie die paarweisen Vergleiche suchen bei denen sowohl die obere als auch die untere Grenze der Differenz entweder negativ oder positiv sind.
+Wenn die genannten Werte unterschiedliche Symbole haben, ist der Unterschied nicht signifikant.
+Dies kann auch in der Spalte mit den P-Werten überprüft werden (`p adj`).
+Es gibt auch eine grafische Option zur Anzeige der Ergebnisse von `TukeyHSD()`.
+
+```{r}
+# Plotten der Tukey-Ausgabe
+par(las = 1, mar = c(5, 10, 5, 1))
+plot(Tukey)
+```
+
+# Disclaimer
+
+Dieses Handout ist eine vorläufige Version, die von einem Nicht-Statistiker erstellt wurde, daher ist die Verwendung vorsichtig und auf eigenes Risiko.
+Da dieser Text für weitere R-Kurse verbessert werden soll R-Kursen verbessert werden soll, ist jeder Kommentar, jede Korrektur und jeder Vorschlag höchst willkommen (senden Sie diese an <kamapu@posteo.de>).
+
+Der Inhalt dieses Handouts basiert auf deutschen Referenzen [@Ligges2008;@Kohler2002;@Dormann2008].
+
+Einige englische Referenzen können @Zar2009 und die Tutorials von
+@King2014, @Schumacher2007 und @Everitt2005.
+
+# Übungen
+
+- Sie fragen: "Gibt es einen Unterschied im pH-Wert des Bodens zwischen den Unterschiede zwischen den Probenahmestandorten?", aber diesmal überprüfen Sie zuerst die Normalverteilung der Residuen und die Homogenität der Varianzen zwischen den Orten.
+- Gibt es Unterschiede zwischen den angewandten Insektiziden in der Menge der Insekten (Überlebende) in den Versuchsparzellen gefunden? Verwenden Sie den Datensatz `InsectSprays`.
+- Wenden Sie eine faktorielle ANOVA auf den Datensatz `ToothGrowth` an.
+- Versuchen Sie nun das Gleiche mit Ihrem eigenen Datensatz.
 
 # Referenzen
 
