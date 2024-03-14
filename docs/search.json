@@ -39,7 +39,7 @@
     "href": "Blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Schummelzettel\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nHier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.\n\n\n\n\n\n\n24.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nLesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\nKeine Treffer"
+    "text": "Programmieren mit KI\n\n\n\n\n\n\n\n\n\n\n\n\n14.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nProgrammieren mit KI\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nEine kurze Einführung in die Programmierung mit KI-Anwendungen.\n\n\n\n\n\n\n14.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nSchummelzettel\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nHier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.\n\n\n\n\n\n\n24.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nLesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\nKeine Treffer"
   },
   {
     "objectID": "Blog/Lesenswert/index.html",
@@ -68,5 +68,12 @@
     "title": "Schummelzettel",
     "section": "",
     "text": "Wenn man die Arbeit mit R lernt oder in neue Anwendungen eingeführt wird, geben Schummelzettel einen guten Überblick über die wichtigsten Funktionen oder Argumente. Nachfolgend sind einige Beispiele aus dem Internet aufgelistet.\n\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet\nknitr Reference Card\nR Markdown Cheat Sheet\nInteraktives Markdown Tutorial\nCode Chunk Options for knitr and Rmarkdown\nThe Carpentries Glosario"
+  },
+  {
+    "objectID": "Blog/KI/index.html",
+    "href": "Blog/KI/index.html",
+    "title": "Programmieren mit KI",
+    "section": "",
+    "text": "Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von Inhalten und Bildern begeistern ChatGPT und Co. durch ihre Fähigkeit, Quellcode in verschiedenen Programmiersprachen zu generieren.\nDies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.\nzu den Folien"
   }
 ]

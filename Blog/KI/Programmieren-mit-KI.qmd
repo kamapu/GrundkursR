@@ -1,0 +1,160 @@
+---
+title: Programmieren mit KI
+author: Miguel Alvarez
+date: 2024-03-14
+format: kamapu-beamer
+---
+
+# Künstliche Intelligenz
+
+Was ist Künstliche Intelligenz?
+
+\vspace{0.5cm}
+
+\small
+
+*Systeme, die menschenähnliche Intelligenz\
+und kognitive Fähigkeiten nachahmen.*
+
+\normalsize
+
+\vspace{0.5cm}
+
+- Autonomie
+- Lernfähigkeit
+
+\sidepic{images/android.jpg}
+
+
+# Künstliche Intelligenz
+
+Wozu nutzen wir KI?
+
+\vspace{0.5cm}
+
+- Generative KI
+  - Textgeneratoren
+- Dialogsysteme (Chatbots)
+
+\sidepic{images/chatbot.jpg}
+
+
+# Künstliches neuronales Netz
+
+\small
+
+Erste Beschreibung von Warren McCulloch\
+und Walter Pitts (**1943**)
+
+\vspace{0.3cm}
+
+Erster Einsatz im Computer (*Snarc*)\
+von Marvin Minsky (**1951**)
+
+\vspace{0.3cm}
+
+Wiedergeburt von KI in den Bereichen\
+Mustererkennung und\
+maschinelles Lernen (**2009**)
+
+\vspace{0.3cm}
+
+Freigabe von ChatGPT (*GPT-3*) für\
+die Öffentlichkeit und darauffolgendes\
+KI-Hype (**2022**)
+
+
+\sidepic{images/neuronales-netzwerk.png}
+
+
+# Anwendungen
+
+\small
+
+**Welche Anbieter können programmieren?**
+
+- [ChatGPT](https://chat.openai.com/)
+- [Copilot](https://copilot.microsoft.comhttps://copilot.microsoft.com/)
+- [perplexity](https://www.perplexity.ai/)
+- [YOU.com](https://you.com/)
+- [BLACKBOX AI](https://www.useblackbox.io/) (Für Programmierung\
+  optimiert)
+- [Galileo AI](https://www.usegalileo.ai/) (Generiert Benutzeroberflächen)
+
+\vspace{0.3cm}
+
+[GitHub](https://github.com/) und [GitLab](https://gitlab.com/) bieten eigene Chatbots an.
+
+\vspace{0.3cm}
+
+Beispiel aus [YOU.com](https://you.com/)
+
+\sidepic{images/chatbot-latex.png}
+
+
+# Warum gerade jetzt?
+
+*Weil ChatGPT?*
+
+\vspace{1cm}
+
+- Rechenkapazität
+- Daten digital verfügbar
+
+\vspace{1cm}
+
+\small
+
+Bildquelle: [DMS Factory](https://www.dmsfactory.com/blog/geschichte-der-digitalisierung-zeitstrahl/)
+
+\sidepic{images/time-line.png}
+
+# Anwendungen
+
+**Nutzung von KI zum Programmieren**
+
+- für komplexe bis einfache Aufgaben
+- zur Fehlerbehebung
+- zur Generierung von Datensätzen
+- zur Generierung von Inhalten
+  - Texte
+  - Bilder
+
+\sidepic{images/working-ants.jpg}
+
+
+# Vorsicht!
+
+\small
+
+- Enthalten die Aufgaben sensible oder\
+  vertrauliche Informationen?
+- Auch beim Programmieren können\
+  Halluzinationen auftreten.
+- Der Benutzer sollte mit der\
+  Programmiersprache vertraut sein.
+- Es sollte erwähnt werden, wenn KI für\
+  eine Aufgabe verwendet wurde.
+
+\sidepic{images/evil-wizard.jpg}
+
+
+# Disclaimer
+
+*Diese Bilder wurden (leider) mit KI erstellt*.
+
+\vspace{2.5cm}
+
+\small
+
+Kunstvolle Bilder wurden mit [Image Creator](https://designer.microsoft.com/)\
+erzeugt.
+
+Die Textinhalte wurden mit [DeepL Write](https://www.deepl.com/write)\
+verbessert.
+
+\sidepic{images/trump-arrested.jpg}
+
+#
+
+\fullpic{images/closure.jpg}

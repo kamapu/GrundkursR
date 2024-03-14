@@ -1,0 +1,18 @@
+---
+title: Programmieren mit KI
+date: '2024-03-14'
+author: Miguel Alvarez
+date-modified: '`r Sys.Date()`'
+image: ai-programmer.jpg
+categories:
+  - Zusatzmaterial
+description:
+  Eine kurze Einführung in die Programmierung mit KI-Anwendungen.
+draft: false
+---
+
+Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von Inhalten und Bildern begeistern ChatGPT und Co. durch ihre Fähigkeit, Quellcode in verschiedenen Programmiersprachen zu generieren.
+
+Dies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.
+
+[zu den Folien](Programmieren-mit-KI)

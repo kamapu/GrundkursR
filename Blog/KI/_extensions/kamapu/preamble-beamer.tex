@@ -1,0 +1,114 @@
+\usepackage[absolute,overlay]{textpos}
+
+% Define custom colors
+\definecolor{kmbrown}{HTML}{686143}
+\definecolor{kmblue}{HTML}{1c5276}
+\definecolor{kmgreen}{HTML}{315932}
+\definecolor{titlecol}{HTML}{ {{< meta titlecol >}} }
+
+% Define logo
+\def\logo{ {{< meta kmlogo >}} }
+
+% Customized frame title
+\setbeamertemplate{frametitle}
+{
+    \begin{beamercolorbox}[ht=2.5em,wd=\paperwidth]{frametitle}
+        \hspace*{3mm}\includegraphics[height=10mm]{\logo}\hspace*{1ex}\textbf{\insertframetitle}
+    \end{beamercolorbox}
+}
+% Add space between frametitle and content
+\addtobeamertemplate{frametitle}{}{\vspace{0.5em}}
+
+% Page numbering
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+            \usebeamerfont{author in head/foot}%
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+
+% Set default colors
+\setbeamercolor*{author in head/foot}{fg=black}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor*{frametitle}{fg=kmblue}
+\setbeamercolor*{title}{fg=kmblue}
+
+% Define a sidepic command
+\newcommand{\sidepic}[1]{%
+\begin{textblock}{80}(9,0)
+\includegraphics[height=90mm,keepaspectratio]{#1}
+\end{textblock}
+}
+
+% Define a fullpic command
+\newcommand{\fullpic}[1]{%
+\begin{textblock}{160}(0,0)
+\includegraphics[height=90mm,keepaspectratio]{#1}
+\end{textblock}
+}
+
+% Custom title page
+
+\setbeamertemplate{title page}{%
+  \begin{textblock}{2}(0,0)
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{ {{< meta titleimage >}} }
+  \end{textblock}
+  \begin{textblock}{16}(0,1)
+    \centering
+    \color{titlecol}
+    
+    \LARGE
+
+    \ifx\inserttitle\empty
+      \vspace{1ex}
+    \else
+      \textbf{\inserttitle}
+    \fi
+
+    \Large
+
+    \ifx\insertsubtitle\empty
+      \vspace{1ex}
+    \else
+      \insertsubtitle
+    \fi
+
+    \vspace{30mm}\normalsize
+
+    \ifx\insertauthor\empty
+      \vspace{1ex}
+    \else
+      \insertauthor
+    \fi
+
+    \footnotesize
+
+    \ifx\insertinstitute\empty
+      \vspace{0.5ex}
+    \else
+      \textit{\insertinstitute}
+    \fi
+
+    \vspace{1mm}
+    
+    \ifx\insertdate\empty
+      \vspace{1ex}
+    \else
+      \insertdate
+    \fi
+
+    \usebeamercolor*{normal text}
+
+  \end{textblock}
+  \begin{textblock}{16}(0.3,0.6)
+    \includegraphics[height=10mm]{\logo}
+  \end{textblock}
+}
+
+% Custom bullet points
+\setbeamertemplate{itemize items}[square]
+\setbeamercolor*{item}{fg=kmgreen}
