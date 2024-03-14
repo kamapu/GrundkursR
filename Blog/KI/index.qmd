@@ -15,4 +15,4 @@ Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von In
 
 Dies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.
 
-[zu den Folien](Programmieren-mit-KI)
+[zu den Folien](Programmieren-mit-KI.pdf)
