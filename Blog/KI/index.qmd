@@ -15,7 +15,7 @@ Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von In
 
 Dies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.
 
-[zu den Folien](Programmieren-mit-KI.pdf)
+[zu den Folien](../../Dateien/Programmieren-mit-KI.pdf)
 
 ::: {.callout-tip collapse="true"}
 ## Erstellt einen Taschenrechner

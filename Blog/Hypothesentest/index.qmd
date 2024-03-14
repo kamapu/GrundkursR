@@ -3,7 +3,7 @@ title: Einführung in die parametrischen Tests
 date: '2024-03-12'
 author: Miguel Alvarez
 date-modified: '`r Sys.Date()`'
-image: LandUses.png
+image: LandUses.jpg
 categories:
   - Übung
 description:
@@ -11,7 +11,7 @@ description:
 bibliography: biblioreferences.bib
 cls: https://www.zotero.org/styles/vegetation-classification-and-survey.cls
 link-citations: true
-draft: true
+draft: false
 ---
 
 ```{r}
@@ -23,11 +23,9 @@ Bib <- subset(Bib, bibtexkey %in% Keys)
 write_bib(Bib, "biblioreferences.bib")
 ```
 
+# Datenaufbereitung
 
-# Einführung
-
-Lade die Daten ein...
-
+Wir laden die Kursdatensätze wie gewohnt in unsere Sitzung:
 
 ```{r}
 #| eval: false
@@ -37,17 +35,25 @@ unzip("KursDateien.zip", overwrite = TRUE)
 unlink("KursDateien.zip")
 ```
 
-Danach...
+Wir lesen die Daten ein, dabei setzten wir die Landnutzung und das Land entsprechend als Faktoren (kategorische Variablen).
 
 ```{r}
 Boden <- read.csv("Africa.env.csv")
+Boden$Country <- factor(Boden$Country,
+      levels = c("Kenya", "Tanzania"),
+      labels = c("Kenia", "Tansania"))
+Boden$Locality <- factor(Boden$Locality,
+      levels = c("Rumuruti", "Tegu", "Malinda", "Lukozi"))
+Boden$LandUse <- factor(Boden$LandUse,
+      levels = c("Unused", "Grazing", "Fallow"),
+      labels = c("Ried", "Weide", "Brache"))
 ```
 
 Der Datensatz **Boden** enthält Beobachtungen von 36 Untersuchungsfeldern in vier Orten (zwei Orte in Kenia und zwei Orte in Tansania).
 Die Untersuchungsfelder sind in drei Landnutzungen unterteilt, nämlich
-"ungenutzte Flächen" (halbnatürliche Vegetation), "Weideland" und "Brachland" (lang- und kurzfristig aufgegebene Ackerflächen).
+"ungenutzte Flächen" (halbnatürliche Vegetation, entspricht Ried), "Weiden" und "Brachen" (lang- und kurzfristig aufgegebene Ackerflächen).
 
-![](LandUses.png)
+![](LandUses.jpg)
 
 Zusätzlich zur Zugehörigkeit zu Land, Ort und Landnutzung enthält **Boden** die bodenchemischen Variablen für jede Fläche, nämlich den Gehalt an organischem Kohlenstoffgehalt (g kg^-1^), Gesamtstickstoffgehalt (g kg^-1^), pflanzenverfügbarer Phosphor (mg kg^-1^), austauschbares Kalium (cmol kg^-1^), elektrische Leitfähigkeit (dS m^-1^) und pH-Wert [@Kamiri2010].
 
@@ -56,9 +62,10 @@ Zusätzlich zur Zugehörigkeit zu Land, Ort und Landnutzung enthält **Boden** d
 Die Varianzanalyse (Analysis of Variance, ANOVA) geht davon aus, dass die Variabilität von Messungen durch bestimmte Faktoren beeinflusst wird.
 Zusätzliche Effekte durch unbekannte Faktoren werden als zufällig (unsystematisch) betrachtet und als "experimentelle Fehler" bezeichnet. 
 Für eine einfachen Erklärung betrachten wir die Wirkung eines einzigen Faktors (unabhängige Variable) auf eine abhängige Variable, die so genannte einseitige ANOVA.
-Um dieses Beispiel in einen wissenschaftlichen Kontext zu stellen, lautet unsere Frage lautet: *Ist die elektrische Leitfähigkeit des Bödens von ihrem Herkunftsland abhängig? Oder mit anderen Worten *"Beeinflusst das Herkunftsland die elektrische Leitfähigkeit der Böden?"*
-Dann können wir eine Nullhypothese H~0~ formulieren: *"Die elektrische Leitfähigkeit von Böden ist nicht abhängig von ihrem Herkunftsland"*.
-Die Alternativhypothese lautet H~1~: *"Die elektrische Leitfähigkeit ist abhängig vom Herkunftsland Herkunftsland ab und unterscheidet sich daher zwischen den Ländern"*.
+
+Um dieses Beispiel in einen wissenschaftlichen Kontext zu stellen, lautet unsere Frage: *Ist die elektrische Leitfähigkeit des Bödens von ihrem Herkunftsland abhängig?* Oder mit anderen Worten *"Beeinflusst das Herkunftsland die elektrische Leitfähigkeit der Böden?"*
+Dann können wir eine Nullhypothese formulieren *H~0~: "Die elektrische Leitfähigkeit von Böden ist nicht abhängig von ihrem Herkunftsland"*.
+Die Alternativhypothese lautet *H~1~: "Die elektrische Leitfähigkeit ist abhängig vom Herkunftsland Herkunftsland ab und unterscheidet sich daher zwischen den Ländern"*.
 
 Zur Durchführung der Varianzanalyse verwenden wir die Funktion `aov()`, die intern ein lineares Modell aufruft (Funktion \texttt{lm}).
 Alternativ können Sie auch die Funktion `anova()` verwenden, aber dann können Sie vorher das lineare Modell anpassen.
@@ -81,21 +88,21 @@ Dazu teilen wir zunächst die Variable nach Herkunftsland auf und überprüfen d
 
 ```{r}
 ## Leitfähigkeit der Bodenproben aus Kenia
-EC.Kenya <- subset(Boden, Country == "Kenya")$EC
+EC.Kenia <- subset(Boden, Country == "Kenia")$EC
 
 ## Leitfähigkeit der Bodenproben aus Tansania
-EC.Tanzania <- subset(Boden, Country == "Tanzania")$EC
+EC.Tansania <- subset(Boden, Country == "Tansania")$EC
 
 ## Histogramme
-par(mfrow=c(1,2), las = 1)
+par(mfrow = c(1,2), las = 1)
 
 ## Leitfähigkeit der Bodenproben aus Kenia
-hist(EC.Kenya, freq = FALSE)
-curve(dnorm(x, mean = mean(EC.Kenya), sd = sd(EC.Kenya)), col = "red", add = TRUE)
+hist(EC.Kenia, freq = FALSE)
+curve(dnorm(x, mean = mean(EC.Kenia), sd = sd(EC.Kenia)), col = "red", add = TRUE)
 
 ## Leitfähigkeit der Bodenproben aus Tansania
-hist(EC.Tanzania, freq = FALSE)
-curve(dnorm(x, mean = mean(EC.Tanzania), sd = sd(EC.Tanzania)), col = "red", add = TRUE)
+hist(EC.Tansania, freq = FALSE)
+curve(dnorm(x, mean = mean(EC.Tansania), sd = sd(EC.Tansania)), col = "red", add = TRUE)
 
 ```
 
@@ -160,7 +167,13 @@ Solche Transformationen ändern nicht nur die Skala der Variablen, sondern sie v
 Numerische Variablen werden häufig mit Hilfe der logarithmischen, reziproken und Quadratwurzel-Transformationen.
 Die Arkansinus-Quadratwurzel-Transformation wird verwendet, um Prozentsätze und Proportionen zu transformieren.
 
-*__Tabelle hier__*
+Formel | Anmerkungen
+-------|------------
+`log(x + c, base=exp(1))` | Logarithmus-Transformation
+`1/(x + c)` | Kehrwert-Transformation
+`sqrt(x + c)` | Quadratwurzel-Transformation
+`asin(sqrt(x/c))*180/pi` | Arkansinus-Quadrat-Wurzel-Transformation
+ `(x - mean(x)/sd(x))`, `scale(x)` | Standardisierung (Reskalierung)
 
 Wenn die genannten Transformationen nicht erfolgreich waren, bleibt die Alternative einer einer Box-Cox-Transformation.
 Hierfür steht die Funktion `boxcox()` im dem Paket [`MASS`]( https://CRAN.R-project.org/package=MASS ) zur Verfügung.
@@ -303,10 +316,8 @@ plot(Tukey)
 Dieses Handout ist eine vorläufige Version, die von einem Nicht-Statistiker erstellt wurde, daher ist die Verwendung vorsichtig und auf eigenes Risiko.
 Da dieser Text für weitere R-Kurse verbessert werden soll R-Kursen verbessert werden soll, ist jeder Kommentar, jede Korrektur und jeder Vorschlag höchst willkommen (senden Sie diese an <kamapu@posteo.de>).
 
-Der Inhalt dieses Handouts basiert auf deutschen Referenzen [@Ligges2008;@Kohler2002;@Dormann2008].
-
-Einige englische Referenzen können @Zar2009 und die Tutorials von
-@King2014, @Schumacher2007 und @Everitt2005.
+Der Inhalt dieses Handouts basiert auf deutschen Referenzen [@Ligges2008; @Koehler2012;@Dormann2008].
+Für Referenzen auf Englisch, siehe @Zuur2010 und @Everitt2010.
 
 # Übungen
 

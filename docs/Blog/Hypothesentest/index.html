@@ -184,7 +184,7 @@ div.csl-indent {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#einführung" id="toc-einführung" class="nav-link active" data-scroll-target="#einführung">Einführung</a></li>
+  <li><a href="#datenaufbereitung" id="toc-datenaufbereitung" class="nav-link active" data-scroll-target="#datenaufbereitung">Datenaufbereitung</a></li>
   <li><a href="#varianzanalyse" id="toc-varianzanalyse" class="nav-link" data-scroll-target="#varianzanalyse">Varianzanalyse</a>
   <ul class="collapse">
   <li><a href="#test-auf-normalverteilung" id="toc-test-auf-normalverteilung" class="nav-link" data-scroll-target="#test-auf-normalverteilung">Test auf Normalverteilung</a></li>
@@ -236,7 +236,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Geändert</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">13. März 2024</p>
+      <p class="date-modified">14. März 2024</p>
     </div>
   </div>
     
@@ -245,26 +245,35 @@ div.csl-indent {
 
 </header>
 
-<section id="einführung" class="level1">
-<h1>Einführung</h1>
-<p>Lade die Daten ein…</p>
+<section id="datenaufbereitung" class="level1">
+<h1>Datenaufbereitung</h1>
+<p>Wir laden die Kursdatensätze wie gewohnt in unsere Sitzung:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="st">"https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip"</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> <span class="st">"KursDateien.zip"</span>, <span class="at">method =</span> <span class="st">"curl"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"KursDateien.zip"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"KursDateien.zip"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Danach…</p>
+<p>Wir lesen die Daten ein, dabei setzten wir die Landnutzung und das Land entsprechend als Faktoren (kategorische Variablen).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Africa.env.csv"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Boden <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Africa.env.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Boden<span class="sc">$</span>Country <span class="ot">&lt;-</span> <span class="fu">factor</span>(Boden<span class="sc">$</span>Country,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Kenya"</span>, <span class="st">"Tanzania"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Kenia"</span>, <span class="st">"Tansania"</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Boden<span class="sc">$</span>Locality <span class="ot">&lt;-</span> <span class="fu">factor</span>(Boden<span class="sc">$</span>Locality,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Rumuruti"</span>, <span class="st">"Tegu"</span>, <span class="st">"Malinda"</span>, <span class="st">"Lukozi"</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Boden<span class="sc">$</span>LandUse <span class="ot">&lt;-</span> <span class="fu">factor</span>(Boden<span class="sc">$</span>LandUse,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Unused"</span>, <span class="st">"Grazing"</span>, <span class="st">"Fallow"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Ried"</span>, <span class="st">"Weide"</span>, <span class="st">"Brache"</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Der Datensatz <strong>Boden</strong> enthält Beobachtungen von 36 Untersuchungsfeldern in vier Orten (zwei Orte in Kenia und zwei Orte in Tansania). Die Untersuchungsfelder sind in drei Landnutzungen unterteilt, nämlich “ungenutzte Flächen” (halbnatürliche Vegetation), “Weideland” und “Brachland” (lang- und kurzfristig aufgegebene Ackerflächen).</p>
-<p><img src="LandUses.png" class="img-fluid"></p>
+<p>Der Datensatz <strong>Boden</strong> enthält Beobachtungen von 36 Untersuchungsfeldern in vier Orten (zwei Orte in Kenia und zwei Orte in Tansania). Die Untersuchungsfelder sind in drei Landnutzungen unterteilt, nämlich “ungenutzte Flächen” (halbnatürliche Vegetation, entspricht Ried), “Weiden” und “Brachen” (lang- und kurzfristig aufgegebene Ackerflächen).</p>
+<p><img src="LandUses.jpg" class="img-fluid"></p>
 <p>Zusätzlich zur Zugehörigkeit zu Land, Ort und Landnutzung enthält <strong>Boden</strong> die bodenchemischen Variablen für jede Fläche, nämlich den Gehalt an organischem Kohlenstoffgehalt (g kg<sup>-1</sup>), Gesamtstickstoffgehalt (g kg<sup>-1</sup>), pflanzenverfügbarer Phosphor (mg kg<sup>-1</sup>), austauschbares Kalium (cmol kg<sup>-1</sup>), elektrische Leitfähigkeit (dS m<sup>-1</sup>) und pH-Wert <span class="citation" data-cites="Kamiri2010">(<a href="#ref-Kamiri2010" role="doc-biblioref">Kamiri 2010</a>)</span>.</p>
 </section>
 <section id="varianzanalyse" class="level1">
 <h1>Varianzanalyse</h1>
-<p>Die Varianzanalyse (Analysis of Variance, ANOVA) geht davon aus, dass die Variabilität von Messungen durch bestimmte Faktoren beeinflusst wird. Zusätzliche Effekte durch unbekannte Faktoren werden als zufällig (unsystematisch) betrachtet und als “experimentelle Fehler” bezeichnet. Für eine einfachen Erklärung betrachten wir die Wirkung eines einzigen Faktors (unabhängige Variable) auf eine abhängige Variable, die so genannte einseitige ANOVA. Um dieses Beispiel in einen wissenschaftlichen Kontext zu stellen, lautet unsere Frage lautet: <em>Ist die elektrische Leitfähigkeit des Bödens von ihrem Herkunftsland abhängig? Oder mit anderen Worten </em>”Beeinflusst das Herkunftsland die elektrische Leitfähigkeit der Böden?“<em> Dann können wir eine Nullhypothese H<sub>0</sub> formulieren: </em>”Die elektrische Leitfähigkeit von Böden ist nicht abhängig von ihrem Herkunftsland”<em>. Die Alternativhypothese lautet H<sub>1</sub>: </em>”Die elektrische Leitfähigkeit ist abhängig vom Herkunftsland Herkunftsland ab und unterscheidet sich daher zwischen den Ländern”*.</p>
+<p>Die Varianzanalyse (Analysis of Variance, ANOVA) geht davon aus, dass die Variabilität von Messungen durch bestimmte Faktoren beeinflusst wird. Zusätzliche Effekte durch unbekannte Faktoren werden als zufällig (unsystematisch) betrachtet und als “experimentelle Fehler” bezeichnet. Für eine einfachen Erklärung betrachten wir die Wirkung eines einzigen Faktors (unabhängige Variable) auf eine abhängige Variable, die so genannte einseitige ANOVA.</p>
+<p>Um dieses Beispiel in einen wissenschaftlichen Kontext zu stellen, lautet unsere Frage: <em>Ist die elektrische Leitfähigkeit des Bödens von ihrem Herkunftsland abhängig?</em> Oder mit anderen Worten <em>“Beeinflusst das Herkunftsland die elektrische Leitfähigkeit der Böden?”</em> Dann können wir eine Nullhypothese formulieren <em>H<sub>0</sub>: “Die elektrische Leitfähigkeit von Böden ist nicht abhängig von ihrem Herkunftsland”</em>. Die Alternativhypothese lautet <em>H<sub>1</sub>: “Die elektrische Leitfähigkeit ist abhängig vom Herkunftsland Herkunftsland ab und unterscheidet sich daher zwischen den Ländern”</em>.</p>
 <p>Zur Durchführung der Varianzanalyse verwenden wir die Funktion <code>aov()</code>, die intern ein lineares Modell aufruft (Funktion ). Alternativ können Sie auch die Funktion <code>anova()</code> verwenden, aber dann können Sie vorher das lineare Modell anpassen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(EC <span class="sc">~</span> Country, <span class="at">data =</span> Boden)</span>
@@ -283,21 +292,21 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Bevor wir mit der Prüfung der Normalität beginnen, sehen wir uns eine grafische Übersicht über die Verteilung der Werte für die Variable elektrische Leitfähigkeit. Dazu teilen wir zunächst die Variable nach Herkunftsland auf und überprüfen dann deren Histogramme.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Leitfähigkeit der Bodenproben aus Kenia</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>EC.Kenya <span class="ot">&lt;-</span> <span class="fu">subset</span>(Boden, Country <span class="sc">==</span> <span class="st">"Kenya"</span>)<span class="sc">$</span>EC</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>EC.Kenia <span class="ot">&lt;-</span> <span class="fu">subset</span>(Boden, Country <span class="sc">==</span> <span class="st">"Kenia"</span>)<span class="sc">$</span>EC</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Leitfähigkeit der Bodenproben aus Tansania</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>EC.Tanzania <span class="ot">&lt;-</span> <span class="fu">subset</span>(Boden, Country <span class="sc">==</span> <span class="st">"Tanzania"</span>)<span class="sc">$</span>EC</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>EC.Tansania <span class="ot">&lt;-</span> <span class="fu">subset</span>(Boden, Country <span class="sc">==</span> <span class="st">"Tansania"</span>)<span class="sc">$</span>EC</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Histogramme</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">las =</span> <span class="dv">1</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">las =</span> <span class="dv">1</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Leitfähigkeit der Bodenproben aus Kenia</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EC.Kenya, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(EC.Kenya), <span class="at">sd =</span> <span class="fu">sd</span>(EC.Kenya)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EC.Kenia, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(EC.Kenia), <span class="at">sd =</span> <span class="fu">sd</span>(EC.Kenia)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Leitfähigkeit der Bodenproben aus Tansania</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EC.Tanzania, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(EC.Tanzania), <span class="at">sd =</span> <span class="fu">sd</span>(EC.Tanzania)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EC.Tansania, <span class="at">freq =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(EC.Tansania), <span class="at">sd =</span> <span class="fu">sd</span>(EC.Tansania)), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -358,7 +367,36 @@ Bartlett's K-squared = 34.712, df = 1, p-value = 3.823e-09</code></pre>
 <section id="umwandlung-von-daten" class="level2">
 <h2 class="anchored" data-anchor-id="umwandlung-von-daten">Umwandlung von Daten</h2>
 <p>Es ist nicht alles verloren. Die Rettung kann die Daten Transformation. Die gängigsten Methoden sind relativ einfach (siehe Tabelle). Solche Transformationen ändern nicht nur die Skala der Variablen, sondern sie verändern auch die Verteilung der Werte. Numerische Variablen werden häufig mit Hilfe der logarithmischen, reziproken und Quadratwurzel-Transformationen. Die Arkansinus-Quadratwurzel-Transformation wird verwendet, um Prozentsätze und Proportionen zu transformieren.</p>
-<p><em><strong>Tabelle hier</strong></em></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Formel</th>
+<th>Anmerkungen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>log(x + c, base=exp(1))</code></td>
+<td>Logarithmus-Transformation</td>
+</tr>
+<tr class="even">
+<td><code>1/(x + c)</code></td>
+<td>Kehrwert-Transformation</td>
+</tr>
+<tr class="odd">
+<td><code>sqrt(x + c)</code></td>
+<td>Quadratwurzel-Transformation</td>
+</tr>
+<tr class="even">
+<td><code>asin(sqrt(x/c))*180/pi</code></td>
+<td>Arkansinus-Quadrat-Wurzel-Transformation</td>
+</tr>
+<tr class="odd">
+<td><code>(x - mean(x)/sd(x))</code>, <code>scale(x)</code></td>
+<td>Standardisierung (Reskalierung)</td>
+</tr>
+</tbody>
+</table>
 <p>Wenn die genannten Transformationen nicht erfolgreich waren, bleibt die Alternative einer einer Box-Cox-Transformation. Hierfür steht die Funktion <code>boxcox()</code> im dem Paket <a href="https://CRAN.R-project.org/package=MASS"><code>MASS</code></a> zur Verfügung.</p>
 <p>Einige Spezialfälle sind die Dummy-Transformation, die für die Analyse von nominalen Variablen angewandt wird, und die Standardisierung, die vor allem in der multivariaten Statistik benötigt wird.</p>
 <div class="cell">
@@ -538,13 +576,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Fit: aov(formula = pH ~ Locality, data = Boden)
 
 $Locality
-                       diff       lwr         upr     p adj
-Malinda-Lukozi   -0.7833333 -1.595514  0.02884776 0.0619263
-Rumuruti-Lukozi  -1.3722222 -2.184403 -0.56004113 0.0003764
-Tegu-Lukozi      -1.8500000 -2.662181 -1.03781891 0.0000038
-Rumuruti-Malinda -0.5888889 -1.401070  0.22329220 0.2225102
-Tegu-Malinda     -1.0666667 -1.878848 -0.25448558 0.0062137
-Tegu-Rumuruti    -0.4777778 -1.289959  0.33440331 0.3963421</code></pre>
+                       diff         lwr       upr     p adj
+Tegu-Rumuruti    -0.4777778 -1.28995887 0.3344033 0.3963421
+Malinda-Rumuruti  0.5888889 -0.22329220 1.4010700 0.2225102
+Lukozi-Rumuruti   1.3722222  0.56004113 2.1844033 0.0003764
+Malinda-Tegu      1.0666667  0.25448558 1.8788478 0.0062137
+Lukozi-Tegu       1.8500000  1.03781891 2.6621811 0.0000038
+Lukozi-Malinda    0.7833333 -0.02884776 1.5955144 0.0619263</code></pre>
 </div>
 </div>
 <p>In der Ausgabe von <code>TukeyHSD()</code> können Sie die paarweisen Vergleiche suchen bei denen sowohl die obere als auch die untere Grenze der Differenz entweder negativ oder positiv sind. Wenn die genannten Werte unterschiedliche Symbole haben, ist der Unterschied nicht signifikant. Dies kann auch in der Spalte mit den P-Werten überprüft werden (<code>p adj</code>). Es gibt auch eine grafische Option zur Anzeige der Ergebnisse von <code>TukeyHSD()</code>.</p>
@@ -560,8 +598,7 @@ Tegu-Rumuruti    -0.4777778 -1.289959  0.33440331 0.3963421</code></pre>
 <section id="disclaimer" class="level1">
 <h1>Disclaimer</h1>
 <p>Dieses Handout ist eine vorläufige Version, die von einem Nicht-Statistiker erstellt wurde, daher ist die Verwendung vorsichtig und auf eigenes Risiko. Da dieser Text für weitere R-Kurse verbessert werden soll R-Kursen verbessert werden soll, ist jeder Kommentar, jede Korrektur und jeder Vorschlag höchst willkommen (senden Sie diese an <a href="mailto:kamapu@posteo.de" class="email">kamapu@posteo.de</a>).</p>
-<p>Der Inhalt dieses Handouts basiert auf deutschen Referenzen <span class="citation" data-cites="Ligges2008 Kohler2002 Dormann2008">(<a href="#ref-Ligges2008" role="doc-biblioref">Ligges 2008</a>; <a href="#ref-Kohler2002" role="doc-biblioref"><strong>Kohler2002?</strong></a>; <a href="#ref-Dormann2008" role="doc-biblioref">Dormann und Kühn 2008</a>)</span>.</p>
-<p>Einige englische Referenzen können <span class="citation" data-cites="Zar2009">(<a href="#ref-Zar2009" role="doc-biblioref"><strong>Zar2009?</strong></a>)</span> und die Tutorials von <span class="citation" data-cites="King2014">(<a href="#ref-King2014" role="doc-biblioref"><strong>King2014?</strong></a>)</span>, <span class="citation" data-cites="Schumacher2007">(<a href="#ref-Schumacher2007" role="doc-biblioref"><strong>Schumacher2007?</strong></a>)</span> und <span class="citation" data-cites="Everitt2005">(<a href="#ref-Everitt2005" role="doc-biblioref"><strong>Everitt2005?</strong></a>)</span>.</p>
+<p>Der Inhalt dieses Handouts basiert auf deutschen Referenzen <span class="citation" data-cites="Ligges2008 Koehler2012 Dormann2008">(<a href="#ref-Ligges2008" role="doc-biblioref">Ligges 2008</a>; <a href="#ref-Koehler2012" role="doc-biblioref">Köhler, Schachtel, und Voleske 2012</a>; <a href="#ref-Dormann2008" role="doc-biblioref">Dormann und Kühn 2008</a>)</span>. Für Referenzen auf Englisch, siehe <span class="citation" data-cites="Zuur2010">Zuur, Ieno, und Elphick (<a href="#ref-Zuur2010" role="doc-biblioref">2010</a>)</span> und <span class="citation" data-cites="Everitt2010">Everitt und Hothorn (<a href="#ref-Everitt2010" role="doc-biblioref">2010</a>)</span>.</p>
 </section>
 <section id="übungen" class="level1">
 <h1>Übungen</h1>
@@ -583,11 +620,20 @@ Tegu-Rumuruti    -0.4777778 -1.289959  0.33440331 0.3963421</code></pre>
 <div id="ref-Dormann2008" class="csl-entry" role="listitem">
 Dormann, Carsten F, und Ingolf Kühn. 2008. <em>Angewandte <span>Statistik</span> für die biologischen <span>Wissenschaften</span></em>. Bd. 2. Leipzig-Halle: UFZ. <a href="https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf">https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf</a>.
 </div>
+<div id="ref-Everitt2010" class="csl-entry" role="listitem">
+Everitt, Brian S., und Torsten Hothorn. 2010. <em>A Handbook of Statistical Analyses Using R, Second Edition</em>. Chapman; Hall/CRC.
+</div>
 <div id="ref-Kamiri2010" class="csl-entry" role="listitem">
 Kamiri, Hellen Wangechi. 2010. <em>Effects of land use dynamics on attributes of wetland soils in Africa</em>. Bonn: INRES.
 </div>
+<div id="ref-Koehler2012" class="csl-entry" role="listitem">
+Köhler, Wolfgang, Gabriel Schachtel, und Peter Voleske. 2012. <em>Biostatistik</em>. <em>Springer-Lehrbuch</em>. Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-642-29271-2">https://doi.org/10.1007/978-3-642-29271-2</a>.
+</div>
 <div id="ref-Ligges2008" class="csl-entry" role="listitem">
 Ligges, Uwe. 2008. <em>Programmieren mit <span>R</span></em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-540-79998-6">https://doi.org/10.1007/978-3-540-79998-6</a>.
+</div>
+<div id="ref-Zuur2010" class="csl-entry" role="listitem">
+Zuur, Alain F., Elena N. Ieno, und Chris S. Elphick. 2010. <span>„A protocol for data exploration to avoid common statistical problems“</span>. <em>Methods in Ecology and Evolution</em> 1 (1): 3–14. <a href="https://doi.org/10.1111/j.2041-210x.2009.00001.x">https://doi.org/10.1111/j.2041-210x.2009.00001.x</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
