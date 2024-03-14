@@ -16,3 +16,29 @@ Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von In
 Dies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.
 
 [zu den Folien](Programmieren-mit-KI.pdf)
+
+::: {.callout-tip collapse="true"}
+## Erstellt einen Taschenrechner
+
+*__Folgende Abfragen sollten schrittweise durchgeführt werden:__*
+
+Bitte programmiere mir einen Taschenrechner unter Verwendung von shiny apps in R.
+
+Kann ich in der Anwendung eine Taste für jede Zahl und eine Taste für die Operatoren Plus, Minus, Mal, Geteilt durch und Gleich erzeugen?
+
+:::
+
+
+::: {.callout-tip collapse="true"}
+## Erzeugt einen Datensatz
+
+Erstellen Sie einen Datensatz (data.frame) in R mit Bevölkerungsdaten für 3 Bezirke (Zauberwald, Traumdorf und Bergland). Die Daten sollen anonymisiert werden. Die drei Bezirke haben unterschiedliche Bevölkerungszahlen (von ca. 500 im Bergland bis 1500 im Traumdorf). Die Individuen werden in drei Klassen eingeteilt: Menschen (mehr im Traumdorf), Elfen (mehr im Zauberwald) und Gnome (mehr im Bergland).
+
+Die Spalten des Datensatzes sind
+
+ID (Anonymisierte ID für Individuen).\
+Bezirk (Zauberwald, Traumdorf und Bergland)\
+Klasse
+
+:::
+
