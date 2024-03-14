@@ -32,7 +32,7 @@ Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätze
 
 Statistische Auswertungen von Datensätzen (Klasse `data.frame`) und Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für Datenverwaltung diskutiert.
 
-- [Skript Tag 5](documents/Tag5.R)
+- [Skript Tag 5](Dateien/Tag5.R)
 
 <!--
 
