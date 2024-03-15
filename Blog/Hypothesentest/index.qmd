@@ -317,7 +317,8 @@ Dieses Handout ist eine vorläufige Version, die von einem Nicht-Statistiker ers
 Da dieser Text für weitere R-Kurse verbessert werden soll R-Kursen verbessert werden soll, ist jeder Kommentar, jede Korrektur und jeder Vorschlag höchst willkommen (senden Sie diese an <kamapu@posteo.de>).
 
 Der Inhalt dieses Handouts basiert auf deutschen Referenzen [@Ligges2008; @Koehler2012;@Dormann2008].
-Für Referenzen auf Englisch, siehe @Zuur2010 und @Everitt2010.
+Für Referenzen auf Englisch, siehe @Everitt2010, @Zuur2010 und @Piepho2018.
+Eine Diskussion über die Bedeutung vom P-Wert finden Sie bei @Nuzzo2014.
 
 # Übungen
 
