@@ -11,56 +11,14 @@
     "href": "Termine.html",
     "title": "Termine",
     "section": "",
-    "text": "Termine 1 und 2\n27. und 29. Februar 2024\nEinstieg in das Syntax und die Datentypen in R, inklusive eine Einführung in die Nutzung von RStudio.\n\nFoliensatz Termin 1\nFoliensatz Termin 2\nSkript Tag 1\nSkript Tag 2\n\n\n\nTermine 3 und 4\n05. und 07. März 2024\nEinführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätzen (Klasse data.frame), sowie das Schreiben und Lesen von Dateien.\n\nSkript Tag 3\nSkript Tag 4\n\n\n\nTermine 5 und 6\n12. und 14. März 2024\nStatistische Auswertungen von Datensätzen (Klasse data.frame) und Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für Datenverwaltung diskutiert. In dieser Version des Kurses wurde das Programmieren mit künstlicher Intelligenz als spezielles Thema eingeführt.\n\nFoliensatz Programmieren mit KI\n\nTaschenrechner V1\nTaschenrechner V2\nFiktive Daten\n\nSkript Tag 5\nSkript Tag 6"
+    "text": "Termine 1 und 2\n27. und 29. Februar 2024\nEinstieg in das Syntax und die Datentypen in R, inklusive eine Einführung in die Nutzung von RStudio.\n\nFoliensatz Termin 1\nFoliensatz Termin 2\nSkript Tag 1\nSkript Tag 2\n\n\n\nTermine 3 und 4\n05. und 07. März 2024\nEinführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätzen (Klasse data.frame), sowie das Schreiben und Lesen von Dateien.\n\nSkript Tag 3\nSkript Tag 4\n\n\n\nTermine 5 und 6\n12. und 14. März 2024\nStatistische Auswertungen von Datensätzen (Klasse data.frame) und Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für Datenverwaltung diskutiert. In dieser Version des Kurses wurde das Programmieren mit künstlicher Intelligenz als spezielles Thema eingeführt.\n\nFoliensatz Programmieren mit KI\n\nTaschenrechner V1\nTaschenrechner V2\nFiktive Daten\n\nSkript Tag 5\nSkript Tag 6\n\n\n\nTermine 7 und 8\n19. und 21. März 2024\nZweite Runde mit Plots, diesmal handeln wir Funktionen vom Paket ggplot2. Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode. Nach der letzten Sitzung bist du kein Anfänger mehr. Zwei besondere Themen werden hier eine Einführung in Rmarkdown und eine Einführung in geographische Informationssystheme."
   },
   {
-    "objectID": "Blog/Software/index.html",
-    "href": "Blog/Software/index.html",
-    "title": "Erforderliche Software und Pakete",
+    "objectID": "Dateien/Programmieren-mit-KI.html",
+    "href": "Dateien/Programmieren-mit-KI.html",
+    "title": "Programmieren mit KI",
     "section": "",
-    "text": "Der Kurs findet in einem Computerraum statt und Sie benötigen keine zusätzliche Ausrüstung, außer Enthusiasmus und gute Laune.\nWenn Sie zu Hause üben möchten, finden Sie hier eine Liste der Programme, die Sie auf Ihrem eigenen Computer installieren müssen.\n\n\nDas Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren.\n\n\n\nRStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
-  },
-  {
-    "objectID": "Blog/Software/index.html#r",
-    "href": "Blog/Software/index.html#r",
-    "title": "Erforderliche Software und Pakete",
-    "section": "",
-    "text": "Das Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren."
-  },
-  {
-    "objectID": "Blog/Software/index.html#rstudio",
-    "href": "Blog/Software/index.html#rstudio",
-    "title": "Erforderliche Software und Pakete",
-    "section": "",
-    "text": "RStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
-  },
-  {
-    "objectID": "Blog.html",
-    "href": "Blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Programmieren mit KI\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nEine kurze Einführung in die Programmierung mit KI-Anwendungen.\n\n\n\n\n\n\n14.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nEinführung in die parametrischen Tests\n\n\n\n\n\n\n\nÜbung\n\n\n\n\nEin Workflow für die parametrische Statistik und das Testen von Hypothesen unter der Annahme der Normalverteilung.\n\n\n\n\n\n\n12.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nSchummelzettel\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nHier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.\n\n\n\n\n\n\n24.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nLesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\nKeine Treffer"
-  },
-  {
-    "objectID": "Blog/Lesenswert/index.html",
-    "href": "Blog/Lesenswert/index.html",
-    "title": "Lesenswert",
-    "section": "",
-    "text": "Literatur\n\nBurns, Patrick. 2011. The R inferno. https://www.burns-stat.com/pages/Tutor/R_inferno.pdf.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nEllis, Andrew, und Boris Mayer. 2019. Einführung in die Programmierung mit R. https://boris.unibe.ch/96675/1/Einführung in R.pdf.\n\n\nFaraway, Julian J. 2002. Practical regression and ANOVA using R. Michigan: LSA, University of Michigan. https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf.\n\n\nKnuth, D. E. 1984. „Literate Programming“. The Computer Journal 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nKöhler, Wolfgang, Gabriel Schachtel, und Peter Voleske. 2012. Biostatistik. Springer-Lehrbuch. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-29271-2.\n\n\nLepš, Jan, und Petr Šmilauer. 2020. Biostatistics with R: An Introductory Guide for Field Biologists. Cambridge University Press. https://doi.org/10.1017/9781108616041.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nLogan, Murray. 2010. Biostatistical design and analysis using R. A practical guide. Chichester: Wiley-Blackwell. http://users.monash.edu.au/~murray/BDAR.\n\n\nParadis, Emmanuel. 2005. R for beginners. Montpellier: Université Montpellier II. https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf.\n\n\nSpiegelhalter, David J. 2020. The art of statistics: Learning from data. Published in paperback. A @Pelican book. UK: Pelican, an imprint of Penguin Books.\n\n\nStatistikstelle. 2020. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2019“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2019.pdf.\n\n\n———. 2021. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2020“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2020.pdf.\n\n\n———. 2022. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2021“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2021.pdf.\n\n\nWickham, Hadley. 2015. R Packages. Cambridge: O’Reilly. http://r-pkgs.had.co.nz/.\n\n\nXie, Yihui, J. J. Allaire, und Garrett Grolemund. 2018. R markdown: The definitive quide. Taylor & Francis Ltd. https://bookdown.org/yihui/rmarkdown/.\n\n\nZuur, Alain F., Elena N. Ieno, und Chris S. Elphick. 2010. „A protocol for data exploration to avoid common statistical problems“. Methods in Ecology and Evolution 1 (1): 3–14. https://doi.org/10.1111/j.2041-210x.2009.00001.x."
-  },
-  {
-    "objectID": "Ressourcen.html",
-    "href": "Ressourcen.html",
-    "title": "Ressourcen",
-    "section": "",
-    "text": "Datensätze\nDie benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.\nUm diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:\n\ndownload.file(url = \"https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip\",\n    destfile = \"KursDateien.zip\", method = \"curl\")\nunzip(\"KursDateien.zip\", overwrite = TRUE)\nunlink(\"KursDateien.zip\")"
-  },
-  {
-    "objectID": "Blog/Schummelzettel/indes.html",
-    "href": "Blog/Schummelzettel/indes.html",
-    "title": "Schummelzettel",
-    "section": "",
-    "text": "Wenn man gerade die Arbeit mit R lernt oder in neuen Anwendungen eingeführt wird, verschaffen Schummelzettel eine gute Überblick der wichtigten Funktionen oder Argumenten. Hier ist eine Liste von solchen Zetteln, die man in Internet finden kann.\n\nShort’s R Reference Card\nThe R Graph Gallery\nR Color Chart\nData tidying with tidyr Cheat Sheet\nknitr Reference Card\nR Markdown Cheat Sheet\nInteraktives Markdown Tutorial\nCode Chunk Options for knitr and Rmarkdown\nThe Carpentries Glosario"
+    "text": "Künstliche Intelligenz\nWas ist Künstliche Intelligenz?\nSysteme, die menschenähnliche Intelligenz\nund kognitive Fähigkeiten nachahmen.\n\nAutonomie\nLernfähigkeit\n\n\n\nKünstliche Intelligenz\nWozu nutzen wir KI?\n\nGenerative KI\n\nTextgeneratoren\n\nDialogsysteme (Chatbots)\n\n\n\nKünstliches neuronales Netz\nErste Beschreibung von Warren McCulloch\nund Walter Pitts (1943)\nErster Einsatz im Computer (Snarc)\nvon Marvin Minsky (1951)\nWiedergeburt von KI in den Bereichen\nMustererkennung und\nmaschinelles Lernen (2009)\nFreigabe von ChatGPT (GPT-3) für\ndie Öffentlichkeit und darauffolgendes\nKI-Hype (2022)\n\n\nAnwendungen\nWelche Anbieter können programmieren?\n\nChatGPT\nCopilot\nperplexity\nYOU.com\nBLACKBOX AI (Für Programmierung\noptimiert)\nGalileo AI (Generiert Benutzeroberflächen)\n\nGitHub und GitLab bieten eigene Chatbots an.\nBeispiel aus YOU.com\n\n\nWarum gerade jetzt?\nWeil ChatGPT?\n\nRechenkapazität\nDaten digital verfügbar\n\nBildquelle: DMS Factory\n\n\nAnwendungen\nNutzung von KI zum Programmieren\n\nfür komplexe bis einfache Aufgaben\nzur Fehlerbehebung\nzur Generierung von Datensätzen\nzur Generierung von Inhalten\n\nTexte\nBilder\n\n\n\n\nVorsicht!\n\nEnthalten die Aufgaben sensible oder\nvertrauliche Informationen?\nAuch beim Programmieren können\nHalluzinationen auftreten.\nDer Benutzer sollte mit der\nProgrammiersprache vertraut sein.\nEs sollte erwähnt werden, wenn KI für\neine Aufgabe verwendet wurde.\n\n\n\nDisclaimer\nDiese Bilder wurden (leider) mit KI erstellt.\nKunstvolle Bilder wurden mit Image Creator\nerzeugt.\nDie Textinhalte wurden mit DeepL Write\nverbessert."
   },
   {
     "objectID": "Blog/Schummelzettel/index.html",
@@ -75,6 +33,13 @@
     "title": "Programmieren mit KI",
     "section": "",
     "text": "Unter den vielfältigen Einsatzmöglichkeiten von KI für die Generierung von Inhalten und Bildern begeistern ChatGPT und Co. durch ihre Fähigkeit, Quellcode in verschiedenen Programmiersprachen zu generieren.\nDies ist ein kurzer Einblick in den Einsatz von KI für Programmieraufgaben.\nzu den Folien\n\n\n\n\n\n\nErstellt einen Taschenrechner\n\n\n\n\n\nFolgende Abfragen sollten schrittweise durchgeführt werden:\nBitte programmiere mir einen Taschenrechner unter Verwendung von shiny apps in R.\nKann ich in der Anwendung eine Taste für jede Zahl und eine Taste für die Operatoren Plus, Minus, Mal, Geteilt durch und Gleich erzeugen?\n\n\n\n\n\n\n\n\n\nErzeugt einen Datensatz\n\n\n\n\n\nErstellen Sie einen Datensatz (data.frame) in R mit Bevölkerungsdaten für 3 Bezirke (Zauberwald, Traumdorf und Bergland). Die Daten sollen anonymisiert werden. Die drei Bezirke haben unterschiedliche Bevölkerungszahlen (von ca. 500 im Bergland bis 1500 im Traumdorf). Die Individuen werden in drei Klassen eingeteilt: Menschen (mehr im Traumdorf), Elfen (mehr im Zauberwald) und Gnome (mehr im Bergland).\nDie Spalten des Datensatzes sind\nID (Anonymisierte ID für Individuen).\nBezirk (Zauberwald, Traumdorf und Bergland)\nKlasse"
+  },
+  {
+    "objectID": "Blog.html",
+    "href": "Blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Programmieren mit KI\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nEine kurze Einführung in die Programmierung mit KI-Anwendungen.\n\n\n\n\n\n\n14.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nEinführung in die parametrischen Tests\n\n\n\n\n\n\n\nÜbung\n\n\n\n\nEin Workflow für die parametrische Statistik und das Testen von Hypothesen unter der Annahme der Normalverteilung.\n\n\n\n\n\n\n12.03.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nSchummelzettel\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nHier finden Sie eine Liste von Links zu Schummelblättern, die eine Zusammenstellung der wichtigsten Funktionen in einem bestimmten Kontext bieten.\n\n\n\n\n\n\n24.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nLesenswert\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nWenn Sie ein Thema vertiefen möchten, finden Sie hier eine persönliche Auswahl an Referenzen.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\n  \n\n\n\n\nErforderliche Software und Pakete\n\n\n\n\n\n\n\nZusatzmaterial\n\n\n\n\nSoftware und Erweiterungen, die für diesem Kurs verwendet wurden, falls Sie zu Hause üben möchten.\n\n\n\n\n\n\n23.02.2024\n\n\nMiguel Alvarez\n\n\n\n\n\n\nKeine Treffer"
   },
   {
     "objectID": "Blog/Hypothesentest/index.html",
@@ -110,5 +75,40 @@
     "title": "Einführung in die parametrischen Tests",
     "section": "ANOVA richtig gemacht",
     "text": "ANOVA richtig gemacht\nSobald wir eine geeignete Transformation der Daten gefunden haben, können wir die ANOVA durchführen und korrekte Ergebnisse sicherstellen.\n\nANOVA &lt;- aov(ec.log ~ LandUse, data = Boden)\nsummary(ANOVA)\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)\nLandUse      2   0.19  0.0975   0.057  0.944\nResiduals   33  56.03  1.6978               \n\n\nNach der Transformation gibt es immer noch einen hochsignifikanten Unterschied zwischen Ländern in der elektrischen Leitfähigkeit des Bodens. Und wir können es veröffentlichen."
+  },
+  {
+    "objectID": "Blog/Lesenswert/index.html",
+    "href": "Blog/Lesenswert/index.html",
+    "title": "Lesenswert",
+    "section": "",
+    "text": "Literatur\n\nBurns, Patrick. 2011. The R inferno. https://www.burns-stat.com/pages/Tutor/R_inferno.pdf.\n\n\nCrawley, Michael J. 2013. The R book. Wiley. https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf.\n\n\nDormann, Carsten F, und Ingolf Kühn. 2008. Angewandte Statistik für die biologischen Wissenschaften. Bd. 2. Leipzig-Halle: UFZ. https://www.ufz.de/export/data/2/92353_deutschstatswork_23022011.pdf.\n\n\nEllis, Andrew, und Boris Mayer. 2019. Einführung in die Programmierung mit R. https://boris.unibe.ch/96675/1/Einführung in R.pdf.\n\n\nFaraway, Julian J. 2002. Practical regression and ANOVA using R. Michigan: LSA, University of Michigan. https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf.\n\n\nKnuth, D. E. 1984. „Literate Programming“. The Computer Journal 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nKöhler, Wolfgang, Gabriel Schachtel, und Peter Voleske. 2012. Biostatistik. Springer-Lehrbuch. Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-29271-2.\n\n\nLepš, Jan, und Petr Šmilauer. 2020. Biostatistics with R: An Introductory Guide for Field Biologists. Cambridge University Press. https://doi.org/10.1017/9781108616041.\n\n\nLigges, Uwe. 2008. Programmieren mit R. Berlin: Springer. https://doi.org/10.1007/978-3-540-79998-6.\n\n\nLogan, Murray. 2010. Biostatistical design and analysis using R. A practical guide. Chichester: Wiley-Blackwell. http://users.monash.edu.au/~murray/BDAR.\n\n\nParadis, Emmanuel. 2005. R for beginners. Montpellier: Université Montpellier II. https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf.\n\n\nSpiegelhalter, David J. 2020. The art of statistics: Learning from data. Published in paperback. A @Pelican book. UK: Pelican, an imprint of Penguin Books.\n\n\nStatistikstelle. 2020. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2019“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2019.pdf.\n\n\n———. 2021. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2020“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2020.pdf.\n\n\n———. 2022. „Bevölkerung in der Bundesstadt Bonn, Stichtag 31.12.2021“. Herausgegeben von Bundesstadt Bonn. https://www2.bonn.de/statistik/dl/ews/Bevoelkerungsstatistik2021.pdf.\n\n\nWickham, Hadley. 2015. R Packages. Cambridge: O’Reilly. http://r-pkgs.had.co.nz/.\n\n\nXie, Yihui, J. J. Allaire, und Garrett Grolemund. 2018. R markdown: The definitive quide. Taylor & Francis Ltd. https://bookdown.org/yihui/rmarkdown/.\n\n\nZuur, Alain F., Elena N. Ieno, und Chris S. Elphick. 2010. „A protocol for data exploration to avoid common statistical problems“. Methods in Ecology and Evolution 1 (1): 3–14. https://doi.org/10.1111/j.2041-210x.2009.00001.x."
+  },
+  {
+    "objectID": "Blog/Software/index.html",
+    "href": "Blog/Software/index.html",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "Der Kurs findet in einem Computerraum statt und Sie benötigen keine zusätzliche Ausrüstung, außer Enthusiasmus und gute Laune.\nWenn Sie zu Hause üben möchten, finden Sie hier eine Liste der Programme, die Sie auf Ihrem eigenen Computer installieren müssen.\n\n\nDas Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren.\n\n\n\nRStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
+  },
+  {
+    "objectID": "Blog/Software/index.html#r",
+    "href": "Blog/Software/index.html#r",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "Das Hauptwerkzeug des Kurses ist R und muss als Erstes installiert werden.\nAchten Sie darauf, dass in Windows neue Versionen von R so installiert werden, als wären sie ein anderes Software. Daher sollte man ältere Versionen selber deinstallieren."
+  },
+  {
+    "objectID": "Blog/Software/index.html#rstudio",
+    "href": "Blog/Software/index.html#rstudio",
+    "title": "Erforderliche Software und Pakete",
+    "section": "",
+    "text": "RStudio ist eine integrierte Entwicklungsumgebung für die Programmiersprache R, die eine benutzerfreundliche Bedienung ermöglicht. Es bietet eine Reihe von Unterstützungswerkzeugen wie Autovervollständigung, automatisches Einrücken, Syntaxhervorhebung, Codefaltung, integrierte Hilfe und Objektinformationen und ein integriertes Plotfenster, um nur einige zu nennen."
+  },
+  {
+    "objectID": "Ressourcen.html",
+    "href": "Ressourcen.html",
+    "title": "Ressourcen",
+    "section": "",
+    "text": "Datensätze\nDie benötigte Dateien für diesen Kurs stehen zur Verfügung unter folgenden Link.\nUm diese Dateien direkt in deinem Arbeitsverzeichnis zu speichern, führe folgende Befehle in deiner Sitzung:\n\ndownload.file(url = \"https://kamapu.github.io/GrundkursR/Dateien/KursDateien.zip\",\n    destfile = \"KursDateien.zip\", method = \"curl\")\nunzip(\"KursDateien.zip\", overwrite = TRUE)\nunlink(\"KursDateien.zip\")"
   }
 ]

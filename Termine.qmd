@@ -26,6 +26,7 @@ Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätze
 - [Skript Tag 3](Dateien/Tag3.R)
 - [Skript Tag 4](Dateien/Tag4.R)
 
+
 # Termine 5 und 6
 
 *12. und 14. März 2024*
@@ -33,18 +34,13 @@ Einführung in R-Objekten mit einer besonderen Berücksichtigung von Datensätze
 Statistische Auswertungen von Datensätzen (Klasse `data.frame`) und Erstellung von Graphiken (Plots). Dazu werden bewährte Verfahren für Datenverwaltung diskutiert.
 In dieser Version des Kurses wurde das Programmieren mit künstlicher Intelligenz als spezielles Thema eingeführt.
 
-- [Foliensatz Programmieren mit KI](Blog/KI/Programmieren-mit-KI.pdf)
+- [Foliensatz Programmieren mit KI](Dateien/Programmieren-mit-KI.pdf)
   - [Taschenrechner V1](Dateien/Taschenrechner_V1.R)
   - [Taschenrechner V2](Dateien/Taschenrechner_V2.R)
   - [Fiktive Daten](Dateien/FiktiveDaten.R)
 - [Skript Tag 5](Dateien/Tag5.R)
 - [Skript Tag 6](Dateien/Tag6.R)
 
-<!--
-
-[Folien](documents/FolienRKurs-56.pdf)
-
-[Skript Tag 6](documents/Tag6.R)
 
 # Termine 7 und 8
 
@@ -53,6 +49,10 @@ In dieser Version des Kurses wurde das Programmieren mit künstlicher Intelligen
 Zweite Runde mit Plots, diesmal handeln wir Funktionen vom Paket `ggplot2`.
 Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode.
 Nach der letzten Sitzung bist du kein Anfänger mehr.
+Zwei besondere Themen werden hier eine Einführung in Rmarkdown und eine Einführung in geographische Informationssystheme.
+
+
+<!--
 
 [Folien](documents/FolienRKurs-78.pdf)
 
