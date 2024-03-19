@@ -51,6 +51,7 @@ Automatisieren von Skripte mittels Schleifen, Funktionen und Quellcode.
 Nach der letzten Sitzung bist du kein Anfänger mehr.
 Zwei besondere Themen werden hier eine Einführung in Rmarkdown und eine Einführung in geographische Informationssystheme.
 
+[Folien Rmarkdown](Dateien/rmarkdown-intro.pdf)
 
 <!--
 
