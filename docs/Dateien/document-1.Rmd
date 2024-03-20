@@ -1,0 +1,41 @@
+---
+title: "Mein erstes Rmarkdown"
+author: "Ich selber"
+date: "`r Sys.Date()`"
+output:
+  #pdf_document: default
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Dateien einlesen
+
+Die Daten für Bonn sind in dem Kurs mitgeliefert, usw.
+
+```{r}
+Bevoelkerung <- readRDS("BonnBevoelkerung.rds")
+head(Bevoelkerung)
+```
+
+Wir hatten einige graphische Darstellungen gezeigt bekommen.
+
+
+```{r}
+boxplot(Gesamt ~ Jahr, data = Bevoelkerung)
+```
+
+Achte darauf, dass das erste Argument eine Formula ist.
+
+# Inline chunks
+
+Im Datensatz `iris` sind `r nrow(iris)` Beobachtungen von `r ncol(iris)` Variablen beinhaltet.
+
+
+
+
