@@ -55,3 +55,4 @@ Zwei besondere Themen werden hier eine Einführung in Rmarkdown und eine Einfüh
   - [Rmarkdown Dokument](Dateien/document-1.Rmd)
 - [Skript Tag 7](Dateien/Tag7.R)
 - [Folien GIS](Dateien/gis-intro.pdf)
+- [Skript Tag 8](Dateien/Tag8.R)
